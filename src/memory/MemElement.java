@@ -1,38 +1,34 @@
 package memory;
-import assembler.instsruction.*;
+import assembler.InstructionLine;
+
+import java.util.ArrayList;
+
 public class MemElement {
     private int address;
     private int IntValue;
     private InstructionLine instructionValue;
     private String label;
+    public  static ArrayList<MemElement> Instructions=new ArrayList<>();
 
-
-    public MemElement(int address, InstructionLine instructionValue, String label) {
-        this.address = address;
-        this.instructionValue = instructionValue;
-        this.label = label;
-    }
-    public MemElement(int address, InstructionLine instructionValue) {
-        this.address = address;
-        this.instructionValue = instructionValue;
-    }
-
-    public MemElement(int address, int IntValue, String label) {
-
-        this.address = address;
-        this.IntValue = IntValue;
-        this.label = label;
-    }
 
     public MemElement(int address, int IntValue) {
 
         this.address = address;
         this.IntValue = IntValue;
-    }
+    } 
 
     public MemElement(int address, String label) {
         this.address = address;
         this.label = label;
+        Instructions.add(this);
+    }
+
+    public static int getAddressOfLabel(String label) {
+        MemElement[] Instructs =(MemElement[])Instructions.toArray();
+        for (int i = 0; i < Instructs.length; i++)
+            if (Instructs[i].label.equals(label))
+                return Instructs[i].address;
+        return 0;
     }
 
     public int getAddress() {
