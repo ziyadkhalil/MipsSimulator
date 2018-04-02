@@ -41,7 +41,7 @@ public class InstructionLine {
     }
 
     private void setJ(String line) {
-        constant = MemElement.getAddressOfLabel(line.trim());
+        constant = (MemElement.getAddressOfLabel(line.trim()))/4;
 
         code=instruction.getOpCode()+setBitsConst(constant,26);
     }
