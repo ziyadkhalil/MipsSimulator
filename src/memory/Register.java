@@ -33,6 +33,7 @@ public class Register {
 
     public static String getCodeAssembler(String name)
     {
+        System.out.println(name + "->" + Integer.toBinaryString(REGISTER_NAME.indexOf(name)));
         return Integer.toBinaryString(REGISTER_NAME.indexOf(name));
     }
 }

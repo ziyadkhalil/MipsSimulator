@@ -1,27 +1,27 @@
+import assembler.Assembler;
+import assembler.InstructionLine;
+import assembler.instsruction.IInstruction;
 import assembler.instsruction.Instruction;
 import assembler.instsruction.RInstruction;
 import units.ALUController;
 import units.Controller;
 
+import java.io.FileNotFoundException;
+
 public class Main {
-    public static void main (String[] args){
-//        Instruction i = Instruction.createInstruction("slt");
-//        String s =  i.getOpCode();
-//        boolean[] b = new boolean[s.length()];
-//        for(int k=0;k<s.length();k++){
-//            if (s.charAt(k) == '1') {
-//                b[s.length() - k - 1] = true;
-//            } else {
-//                b[s.length() - k - 1] = false;
-//            }
-//        }
-//        for (int k=0;k<b.length;k++)
-//            System.out.println(b[k]);
-//        Controller c =  new Controller();
-//        c.execute(b);
-//        c.print();
-        Lol lol = new Lol();
-        lol.Haha("addi");
+    public static void main (String[] args) throws FileNotFoundException {
+
+        //Assembler a = new Assembler();
+      //  a.assemble();
+       // int h = 's';
+       // System.out.println(Integer.toBinaryString(h));
+        String[] inst = {
+                "add","lw","sw","beq","bne","addi","slti","sltiu","lh","lhu","lb","lbu","sb","sh","j","jal"
+        };
+        for (String s:
+             inst) {
+            Utils.Hh_hh(Instruction.createInstruction(s));
+        }
 
 
     }

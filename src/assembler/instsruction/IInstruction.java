@@ -9,7 +9,7 @@ import java.util.Arrays;
 import static assembler.instsruction.FormatType.*;
 
 public class IInstruction extends Instruction {
-    private final ArrayList<String> I_INSTRUCTION_ARITHMETIC_TYPE=new ArrayList<>(Arrays.asList("addi","sltui","slti","lui","ori","andi"));
+    private final ArrayList<String> I_INSTRUCTION_ARITHMETIC_TYPE=new ArrayList<>(Arrays.asList("addi","sltiu","slti","lui","ori","andi"));
     private final ArrayList<String> I_INSTRUCTION_ARITHMETIC_OP_CODE=new ArrayList<>(Arrays.asList("001000","001011","001010","001111","001101","001100"));
 
     private final ArrayList<String> I_INSTRUCTION_FLOW_CONTROL_TYPE=new ArrayList<>(Arrays.asList("beq","bne"));

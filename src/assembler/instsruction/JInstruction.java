@@ -9,8 +9,8 @@ import java.util.Arrays;
 import static assembler.instsruction.FormatType.*;
 
 public class JInstruction extends Instruction {
-    private final ArrayList<String> J_TYPE = new ArrayList<>(Arrays.asList("j","jal","jr"));
-    private final ArrayList<String> J_TYPE_OP_CODE = new ArrayList<>(Arrays.asList("000010","000011","001000"));
+    private final ArrayList<String> J_TYPE = new ArrayList<>(Arrays.asList("j","jal"));
+    private final ArrayList<String> J_TYPE_OP_CODE = new ArrayList<>(Arrays.asList("000010","000011"));
 
     private FormatType format;
     private String opCode;
@@ -18,8 +18,8 @@ public class JInstruction extends Instruction {
         super(name);
         this.setFormatType();
         this.setOpCode();
-    }
 
+    }
     @Override
     public FormatType getFormatType() {
         return format;

@@ -5,19 +5,23 @@ import assembler.instsruction.Instruction;
 import memory.MemElement;
 import memory.Register;
 
+import java.util.Map;
+
 public class InstructionLine {
 
-
+    private static Map<String,String> labels;
     private Instruction instruction;
     private String rt;
     private String rs;
     private String rd;
     private int constant;                    //case: I/J format
     private String code;
+    private String index;
 
-    public InstructionLine(String line) {
+    public InstructionLine(String line,String index) {
+        this.index=index;
         instruction=Instruction.createInstruction(line.substring(0,line.indexOf(" ")));
-        line=line.substring(line.indexOf(" ")+1);
+        line=line.substring(line.indexOf(" ")+1).trim();
         switch (instruction.getFormatType()) {
             case J:
                 setJ(line);
@@ -41,9 +45,12 @@ public class InstructionLine {
     }
 
     private void setJ(String line) {
-        constant = (MemElement.getAddressOfLabel(line.trim()))/4;
 
-        code=instruction.getOpCode()+setBitsConst(constant,26);
+        constant = Integer.parseInt(labels.get(line));
+        String x = Integer.toBinaryString(constant);
+        x=setBits(x,28);
+        x=x.substring(0,26);
+        code=instruction.getOpCode()+x;
     }
 
     private void setI_LOAD_STORE(String line) {
@@ -57,7 +64,7 @@ public class InstructionLine {
     }
 
     private void setI_ARITHMETIC(String line) {
-        rt = Register.getCodeAssembler(line.substring(0, line.indexOf(",")));
+        rt = Register.getCodeAssembler(line.substring(0, line.indexOf(",")).trim());
         line = line.substring(line.indexOf(",") + 1);
         rs = Register.getCodeAssembler(line.substring(0, line.indexOf(",")).trim());
         line = line.substring(line.indexOf(",") + 1).trim();
@@ -67,16 +74,23 @@ public class InstructionLine {
     }
 
     private void setI_FLOW_CONTROL(String line) {
-        rs = Register.getCodeAssembler(line.substring(0, line.indexOf(",")));
+        rs = Register.getCodeAssembler(line.substring(0, line.indexOf(",")).trim());
+        System.out.println("rs: "+rs);
         line = line.substring(line.indexOf(",") + 1);
         rt = Register.getCodeAssembler(line.substring(0, line.indexOf(",")).trim());
-        line = line.substring(line.indexOf(",") + 1);
+        System.out.println( "rt: "+rt);
+        line = line.substring(line.indexOf(",") + 1).trim(); //label
+        System.out.println(line);
+        String x = labels.get(line); //gets address location of the label from static map labels
+        constant = (Integer.parseInt(x)- Integer.parseInt(index) - 4)/4 ;    //label address - PC - 4
+        code = instruction.getOpCode()+setBits(rs,5)+setBits(rt,5)+setBitsConst(constant,16);
+
         //TODO after the PC thing
         // constant=(pc-MemoryArray.Indexof(getMemElementOfLabel(label))/4
     }
 
     private void setR_SHIFTING(String line) {
-        rd = Register.getCodeAssembler(line.substring(0, line.indexOf(",")));
+        rd = Register.getCodeAssembler(line.substring(0, line.indexOf(",")).trim());
         line = line.substring(line.indexOf(",") + 1);
         rt = Register.getCodeAssembler(line.substring(0, line.indexOf(",")).trim());
         line = line.substring(line.indexOf(",") + 1).trim();
@@ -86,7 +100,7 @@ public class InstructionLine {
     }
 
     private void setR_ARITHMETIC(String line) {
-        rd = Register.getCodeAssembler(line.substring(0, line.indexOf(",")));
+        rd = Register.getCodeAssembler(line.substring(0, line.indexOf(",")).trim());
         line = line.substring(line.indexOf(",") + 1);
         rs = Register.getCodeAssembler(line.substring(0, line.indexOf(",")).trim());
         line = line.substring(line.indexOf(",") + 1);
@@ -104,13 +118,16 @@ public class InstructionLine {
 
     private String setBitsConst(int constant, int length){
         String bits;
-        if(constant>0)
+        if(constant>=0)
             bits=setBits(Integer.toBinaryString(constant), length);
         else
             bits=Integer.toBinaryString(constant).substring(32-length);
         return bits;
     }
 
+    public static void injectLabels(Map<String,String> labels){
+        InstructionLine.labels=labels;
+    }
 
 
     public String getCode() {
@@ -131,6 +148,7 @@ public class InstructionLine {
     public int getConstant() {
         return constant;
     }
+
 
 }
 
