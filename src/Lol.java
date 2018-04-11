@@ -22,7 +22,7 @@ public class Lol {
         for (int z=0;z<b.length;z++)
             System.out.println(b[z]);
         Controller c =  new Controller();
-        c.execute(b);
+        c.execute();
         c.print();
     }
 }

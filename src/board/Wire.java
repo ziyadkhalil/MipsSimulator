@@ -1,19 +1,31 @@
 package board;
 
-import javafx.application.Application;
+
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
-import javafx.fxml.Initializable;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.paint.Paint;
-import javafx.scene.shape.Line;
-import javafx.scene.shape.Rectangle;
-import javafx.scene.shape.Shape;
-import javafx.stage.Stage;
+import javafx.scene.Node;
+import javafx.scene.layout.AnchorPane;
+import units.Unit;
 
+public class Wire extends AnchorPane {
+    String wireName;
+    Unit from;
+    Unit to;
+    BooleanProperty flag = new SimpleBooleanProperty(false);
 
-public class Wire  {
-    BooleanProperty wt = new SimpleBooleanProperty(true);
+    public boolean isFlag() {
+        return flag.get();
+    }
 
+    public BooleanProperty flagProperty() {
+        return flag;
+    }
+
+    public void setFlag(boolean flag) {
+        this.flag.set(flag);
+    }
+
+    public Wire(Unit input, Unit output) {
+
+    }
 }
