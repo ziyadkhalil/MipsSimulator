@@ -2,8 +2,7 @@ package assembler;
 
 
 import assembler.instsruction.Instruction;
-import memory.MemElement;
-import memory.Register;
+import units.Register;
 
 import java.util.Map;
 
