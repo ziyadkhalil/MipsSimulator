@@ -12,7 +12,7 @@ import javafx.scene.shape.Circle;
 
 import java.io.IOException;
 
-public class Controller extends Unit {
+public class Controller  {
     @FXML Circle opCode5;
     @FXML Circle opCode4;
     @FXML Circle opCode3;
@@ -252,12 +252,10 @@ public class Controller extends Unit {
      //   System.out.println("Reg Dst: "+regDst+"\t"+"ALUSrc: "+ALUSrc+"\t"+"MemToReg: "+memToReg+"\t"+"MemWrite: "+memWrite+"\t"+"MemRead: "+memRead+"\t"+"Branch: "+branch+"\t"+ALUOp[1]+"\t"+ALUOp[0]+"\t"+"RegWrite: "+regWrite);
     }
 
-    @Override
     public void setInput(boolean[] input) {
         opCode=input;
     }
 
-    @Override
     public boolean[] getOutput() {
         return new boolean[0];
     }

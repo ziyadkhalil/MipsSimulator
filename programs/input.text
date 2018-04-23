@@ -1,4 +1,15 @@
-main: add $a0 , $t1 , $t3
+main:
+
+
+
+
+
+
+
+
+
+
+ add $a0 , $t1 , $t3 #kosom dma8i
 michael: add $a0 , $t1 , $t3
 add $a0 , $t1 , $t3
 add $a0 , $t1 , $t3
