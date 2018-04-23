@@ -217,7 +217,6 @@
       <Label fx:id="ALUOpString" layoutX="428.0" layoutY="353.0" prefHeight="18.0" prefWidth="50.0" scaleX="0.69" scaleY="0.69" text="Label" />
       <Label fx:id="RegDstString" layoutX="275.0" layoutY="349.0" prefHeight="18.0" prefWidth="50.0" scaleX="0.69" scaleY="0.69" text="Label" />
       <Label fx:id="InstructionRs" layoutX="290.0" layoutY="425.0" prefHeight="18.0" prefWidth="50.0" scaleX="0.69" scaleY="0.69" text="Label" />
-      <Label fx:id="InstructionRt" layoutX="290.0" layoutY="446.0" prefHeight="18.0" prefWidth="50.0" scaleX="0.69" scaleY="0.69" text="Label" />
       <Label fx:id="InstructionRt" layoutX="292.0" layoutY="518.0" prefHeight="18.0" prefWidth="50.0" scaleX="0.69" scaleY="0.69" text="Label" />
       <Label fx:id="InstructionRd" layoutX="292.0" layoutY="533.0" prefHeight="18.0" prefWidth="50.0" scaleX="0.69" scaleY="0.69" text="Label" />
       <Label fx:id="InstructionConst" layoutX="290.0" layoutY="556.0" prefHeight="18.0" prefWidth="50.0" scaleX="0.69" scaleY="0.69" text="Label" />
