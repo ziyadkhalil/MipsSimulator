@@ -7,6 +7,8 @@ import javafx.beans.property.StringProperty;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.shape.SVGPath;
+import units.*;
+import utils.MipsUtils;
 
 public class Processor {
     @FXML SVGPath Jump;
@@ -162,6 +164,9 @@ public class Processor {
     @FXML Label PCAdderOutt;
     StringProperty PCAdderOuttWire=new SimpleStringProperty();
 
+    //units
+    ALUController ALUController=new ALUController();
+
 
 
     public void process(){
@@ -171,5 +176,9 @@ public class Processor {
         //toMemory()
         //writeBack();
         //setPC();
+    }
+
+    public void excute(){
+
     }
 }
