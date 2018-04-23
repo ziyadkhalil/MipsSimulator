@@ -1,17 +1,24 @@
 package units;
 
 public class Adder {
-    private int firstOperand;
-    private int secondOperand;
-    public Adder(int firstOperand,int secondOperand){
-        this.firstOperand=firstOperand;
-        this.secondOperand=secondOperand;
+    private int FirstOperand;
+    private int SecondOperand;
+    private int Output;
+    public void setInputs(int FirstOperand,int SecondOperand){
+        this.FirstOperand=FirstOperand;
+        this.SecondOperand=SecondOperand;
+        add();
     }
-    public Adder(int firstOperand){
-        this.firstOperand=firstOperand;
-        secondOperand=4;
+    public void setInputs(int FirstOperand){
+        this.FirstOperand=FirstOperand;
+        SecondOperand=4;
+        add();
     }
-    public int add(){
-        return firstOperand+secondOperand;
+    private void add(){
+        Output=FirstOperand+SecondOperand;
+    }
+
+    public int getOutput() {
+        return Output;
     }
 }

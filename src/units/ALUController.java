@@ -1,23 +1,23 @@
 package units;
 
 public class ALUController {
-    Boolean[] ALUOp=new Boolean[3];
-    Boolean[] Fn = new Boolean[6];
+    boolean[] ALUOp=new boolean[3];
+    boolean[] Fn = new boolean[6];
 
-    Boolean add;
-    Boolean sub;
-    Boolean slt;
-    Boolean sll;
-    Boolean srl;
-    Boolean and;
-    Boolean or;
-    Boolean mul;
-    Boolean nor;
-    Boolean jr;
-    Boolean[] Op=new Boolean[7];
-    Boolean ra;
+    boolean add;
+    boolean sub;
+    boolean slt;
+    boolean sll;
+    boolean srl;
+    boolean and;
+    boolean or;
+    boolean mul;
+    boolean nor;
+    boolean jr;
+    boolean[] Op=new boolean[7];
 
-    public ALUController(Boolean[] ALUOp, Boolean[]Fn){
+
+    public void setInputs(boolean[] ALUOp ,boolean[] Fn){
         this.ALUOp=ALUOp;
         this.Fn=Fn;
         //R and other instructions
@@ -41,21 +41,28 @@ public class ALUController {
     }
 
     private void setOp(){
-        ra=jr;
         Op[0]=mul;
         Op[1]=srl;
         Op[2]=sll;
-        Op[3]=or | slt;
-        Op[4]=add | sub | slt;
-        Op[5]=sub | slt;
+        Op[3]=or || slt;
+        Op[4]=add || sub || slt;
+        Op[5]=sub || slt;
         Op[6]=nor;
+    }
+    public boolean[] getOp(){
+        return Op;
+    }
+
+    public boolean getJr() {
+        return jr;
     }
 
     public void print(){
         for(int i=6;i>=0;i--)
             System.out.print(Op[i]+" ");
-        System.out.println(ra);
+        System.out.println(jr);
     }
+
 
 
 }

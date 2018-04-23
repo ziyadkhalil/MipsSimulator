@@ -3,9 +3,7 @@ package board;
 
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
-import javafx.scene.Node;
 import javafx.scene.layout.AnchorPane;
-import units.Unit;
 
 public class Wire extends AnchorPane {
     String wireName;
