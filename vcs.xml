@@ -26,6 +26,10 @@
           <option name="url" value="https://github.com/ZiyadKhalil/CashierMoonxxddd.git" />
           <option name="userName" value="" />
         </UrlAndUserName>
+        <UrlAndUserName>
+          <option name="url" value="https://github.com/FXMisc/RichTextFX" />
+          <option name="userName" value="" />
+        </UrlAndUserName>
       </list>
     </option>
     <option name="cloneParentDir" value="E:\" />
