@@ -1,5 +1,6 @@
 package board;
 
+import assembler.Assembler;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -163,22 +164,53 @@ public class Processor {
     StringProperty MemMux1OutWire=new SimpleStringProperty();
     @FXML Label PCAdderOutt;
     StringProperty PCAdderOuttWire=new SimpleStringProperty();
+    @FXML Label InstructionFn;
+    StringProperty InstructionFnWire=new SimpleStringProperty();
 
     //units
-    ALUController ALUController=new ALUController();
+    private Assembler Assembler=new Assembler();
+    private Controller Controller=new Controller();
+    private ALUController ALUController=new ALUController();
+    private Mux ALUMux=new Mux();
+    private Mux ShamtMux=new Mux();
+    private ALU ALU=new ALU();
+    private Adder PCAdder= new Adder();
+
 
 
 
     public void process(){
         //fetch();
         //decode();
-        //excute();
-        //toMemory()
+        excute();
+        //toMemory();
         //writeBack();
-        //setPC();
+        setPC();
     }
 
-    public void excute(){
+    private void excute(){
+        //ALUController
+        ALUOpStringWire.setValue(MipsUtils.fromBooleantoString(Controller.getAluOp()));
+        ALUController.setInputs(Controller.getAluOp(),MipsUtils.fromStringtoBoolean(InstructionFnWire.getValue()));
+        ALUControllerOutWire.setValue(MipsUtils.fromBooleantoString(ALUController.getOp()));
 
+        //ALUMux
+        ALUMux.set2Inputs(ReadDataReg2Wire.getValue(),ExtenderOutWire.getValue(),ALUSrcWire.getValue().booleanValue());
+        ALUIn2Wire.setValue(ALUMux.getOutput());
+
+        //ShamtMux
+        ShamtMux.set2Inputs("00000000000000000000000000010000",InstructionShamtWire.getValue(),LUIWire.getValue().booleanValue());
+        ShamtStringWire.setValue(ShamtMux.getOutput());
+
+        //ALU
+        ALUIn1Wire=ReadDataReg1Wire;
+        ALU.setInputs(ALUControllerOutWire.getValue(),ALUIn1Wire.getValue(),ALUIn2Wire.getValue(),ShamtStringWire.getValue());
+        ALUZeroWire.setValue((Boolean)ALU.getZeroFlag());
+        ALUResultWire.setValue(ALU.getOutput());
+    }
+
+    private void setPC(){
+        //Adder
     }
 }
+

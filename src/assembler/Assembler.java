@@ -66,4 +66,12 @@ public class Assembler {
             instructions.add(new InstructionLine(tempInstructions.get(i),String.valueOf(initialLocation+4*i)));
         }
     }
+
+    public int getInitialLocation() {
+        return initialLocation;
+    }
+
+    public  ArrayList<InstructionLine> getInstructions() {
+        return instructions;
+    }
 }
