@@ -71,4 +71,11 @@ public class MipsUtils {
         }
         return s;
     }
+
+    public static long stringToLong(String s){
+        if(s.charAt(0)=='0')
+            return Long.parseLong(s,2);
+        else
+            return (-2147483648+Long.parseLong(s.substring(1),2));
+    }
 }

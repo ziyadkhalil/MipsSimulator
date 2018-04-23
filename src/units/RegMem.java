@@ -38,9 +38,9 @@ public class RegMem {
    private Register readReg1;
    private Register readReg2;
    private Register writeReg;
-   private int readData1;
-   private int readData2;
-   private int writeData;
+   private String readData1;
+   private String readData2;
+   private String writeData;
    //boolean currentlyWriting
 
 
@@ -53,18 +53,18 @@ public class RegMem {
        readData2=readReg2.getValue();
    }
 
-   public void write(boolean regWrite,int writeData){
+   public void write(boolean regWrite,String writeData){
        if(regWrite){
           this.writeData=writeData;
           writeReg.setValue(writeData);
        }
    }
 
-    public int getReadData1() {
+    public String getReadData1() {
         return readData1;
     }
 
-    public int getReadData2() {
+    public String getReadData2() {
         return readData2;
     }
 }

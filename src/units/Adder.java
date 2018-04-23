@@ -1,24 +1,26 @@
 package units;
 
+import utils.MipsUtils;
+
 public class Adder {
-    private int FirstOperand;
-    private int SecondOperand;
-    private int Output;
-    public void setInputs(int FirstOperand,int SecondOperand){
-        this.FirstOperand=FirstOperand;
-        this.SecondOperand=SecondOperand;
+    private long firstOperand;
+    private long secondOperand;
+    private long output;
+    public void setInputs(String first,String second){
+        this.firstOperand= MipsUtils.stringToLong(first);
+        this.secondOperand=MipsUtils.stringToLong(second);
         add();
     }
-    public void setInputs(int FirstOperand){
-        this.FirstOperand=FirstOperand;
-        SecondOperand=4;
+    public void setInputs(String first){
+        this.firstOperand=MipsUtils.stringToLong(first);
+        secondOperand=4;
         add();
     }
     private void add(){
-        Output=FirstOperand+SecondOperand;
+        output=firstOperand+secondOperand;
     }
 
-    public int getOutput() {
-        return Output;
+    public String getOutput() {
+        return Long.toBinaryString(output);
     }
 }

@@ -1,26 +1,26 @@
 package units;
 
 public class Mux {
-    private int FirstInput;
-    private int SecondInput;
-    private int ThirdInput;
-    private int Output;
+    private String firstInput;
+    private String secondInput;
+    private String thirdInput;
+    private String output;
     private boolean selection1;
     private boolean selection2;
 
 
 
-    public void set2Inputs(int FirstInput, int SecondInput, boolean selection) {
-        this.FirstInput = FirstInput;
-        this.SecondInput = SecondInput;
+    public void set2Inputs(String firstInput, String secondInput, boolean selection) {
+        this.firstInput = firstInput;
+        this.secondInput = secondInput;
         this.selection1 = selection;
         this.selection2=false;
         select();
     }
-    public void set3Inputs(int FirstInput, int SecondInput, int ThirdInput, boolean[] selections) {
-        this.FirstInput = FirstInput;
-        this.SecondInput = SecondInput;
-        this.ThirdInput=ThirdInput;
+    public void set3Inputs(String firstInput, String secondInput, String thirdInput, boolean[] selections) {
+        this.firstInput = firstInput;
+        this.secondInput = secondInput;
+        this.thirdInput=thirdInput;
         this.selection1=selections[0];
         this.selection2=selections[1];
         select();
@@ -28,14 +28,14 @@ public class Mux {
 
     private void select(){
         if(!selection1&&!selection2)
-            Output=FirstInput;
+            output=firstInput;
         else if(selection1&&!selection2)
-            Output=SecondInput;
+            output=secondInput;
         else
-            Output=ThirdInput;
+            output=thirdInput;
     }
 
-    public int getOutput(){
-        return Output;
+    public String getOutput(){
+        return output;
     }
 }

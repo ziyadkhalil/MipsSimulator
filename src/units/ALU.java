@@ -1,11 +1,13 @@
 package units;
 
+import utils.MipsUtils;
 public class ALU {
-    private int OpInt;
-    private int FirstInt;
-    private int SecondtInt;
-    private int Output;
-    private int ZeroFlag;
+    private int opInt;
+    private long firstLong;
+    private long secondLong;
+    private long shamtLong;
+    private long outputLong;
+    private boolean zeroFlag;
     /*
     Operations guide
     nor=64
@@ -19,47 +21,49 @@ public class ALU {
     and=0
     */
 
-    public void setInputs(String Op, String First, String Second, int Shamt){
-        this.OpInt=Integer.parseInt(Op);
-        this.FirstInt=Integer.parseInt(First);
-        this.SecondtInt=Integer.parseInt(Second);
+    public void setInputs(String Op, String First, String Second, String shamt){
+        this.opInt=Integer.parseInt(Op);           //no negative to handle
+        firstLong=MipsUtils.stringToLong(First);
+        secondLong=MipsUtils.stringToLong(Second);
+        shamtLong=MipsUtils.stringToLong(shamt);
 
-        switch (OpInt){
+        switch (opInt){
             case 64:
-                Output=~(FirstInt|SecondtInt);
+                outputLong=~(firstLong|secondLong);
                 break;
             case 56:
-                Output=(FirstInt<SecondtInt)? 1:0;
+                outputLong=(firstLong<secondLong)? 1:0;
                 break;
             case 48:
-                Output=FirstInt-SecondtInt;
+                outputLong=firstLong-secondLong;
                 break;
             case 16:
-                Output=FirstInt+SecondtInt;
+                outputLong=firstLong+secondLong;
                 break;
             case 8:
-                Output=FirstInt|SecondtInt;
+                outputLong=firstLong|secondLong;
                 break;
             case 4:
-                Output=SecondtInt<<Shamt;          //Read Data1 =0
+                outputLong=secondLong<<shamtLong;          //Read Data1 =0
                 break;
             case 2:
-                Output=SecondtInt>>Shamt;          //Read Data1 =0
+                outputLong=secondLong>>shamtLong;          //Read Data1 =0
                 break;
             case 1:
-                Output=FirstInt*SecondtInt;
+                outputLong=firstLong*secondLong;
                 break;
             case 0:
-                Output=FirstInt&SecondtInt;
+                outputLong=firstLong&secondLong;
                 break;
         }
-        ZeroFlag=(FirstInt-SecondtInt==0)?1:0;
+        zeroFlag=(firstLong-secondLong==0);
     }
 
-    public int getOutput(){
-        return Output;
+    public String getOutput(){
+        return Long.toBinaryString(outputLong);
     }
-    public int getZeroFlag(){
-        return ZeroFlag;
+    public boolean getZeroFlag(){
+        return zeroFlag;
     }
+
 }
