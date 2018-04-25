@@ -1,6 +1,7 @@
 package board;
 
 import assembler.Assembler;
+import assembler.InstructionLine;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -131,7 +132,7 @@ public class Processor {
     @FXML Label BranchAdderOut;
     StringProperty BranchAdderOutWire=new SimpleStringProperty();
     @FXML Label BranchMux1Out;
-    StringProperty BranchMux10Wire=new SimpleStringProperty();
+    StringProperty BranchMux1OutWire=new SimpleStringProperty();
     @FXML Label BranchShifterIn;
     StringProperty BranchShifterInWire=new SimpleStringProperty();
     @FXML Label BranchShifterOut;
@@ -156,6 +157,8 @@ public class Processor {
     StringProperty ReadDataReg2Wire=new SimpleStringProperty();
     @FXML Label WriteDataReg;
     StringProperty WriteDataRegWire=new SimpleStringProperty();
+    @FXML Label WritReg;
+    StringProperty WriteRegStringWire=new SimpleStringProperty();
     @FXML Label WriteDataMem;
     StringProperty WriteDataMemWire=new SimpleStringProperty();
     @FXML Label ReadDataMem;
@@ -174,18 +177,83 @@ public class Processor {
     private Mux ALUMux=new Mux();
     private Mux ShamtMux=new Mux();
     private ALU ALU=new ALU();
+    private Mux WriteRegMux=new Mux();
+    private RegMem RegMem =new RegMem();
+    private Extender Extender=new Extender();
+    private DataMemory DataMemory=new DataMemory();
+    private Extender MemExtender=new Extender();
     private Adder PCAdder= new Adder();
+    private ShiftLeft PCShifter=new ShiftLeft();
+    private ShiftLeft BranchShifter=new ShiftLeft();
+    private Adder BranchAdder=new Adder();
+    private Mux BranchMux1= new Mux();
+    private Mux BranchMux2=new Mux();
+    private Mux PCMux=new Mux();
+    private Mux MemMux1=new Mux();
+    private Mux MemMux2=new Mux();
 
-
-
+    //Variables
+    private String instruction;
+    private static int i;
+    private static String PCAddress;
 
     public void process(){
-        //fetch();
-        //decode();
-        excute();
-        //toMemory();
-        //writeBack();
-        setPC();
+        //Assembler.assemble();
+
+        for(i=0;i<Assembler.getInstructions().size();i++) {
+            fetch();
+            decode();
+            excute();
+            toMemory();
+            setPC();
+            writeBack();
+        }
+    }
+
+    private void fetch(){
+        instruction=((InstructionLine)Assembler.getInstructions().get(i)).getCode();  //TODO get it from InstructionMem
+        //instructionWires
+        InstructionOpWire.setValue(instruction.substring(0,6));
+        InstructionRsWire.setValue(instruction.substring(6,11));
+        InstructionRtWire.setValue(instruction.substring(11,16));
+        InstructionRdWire.setValue(instruction.substring(16,21));
+        InstructionConstWire.setValue(instruction.substring(16));
+        InstructionShamtWire.setValue(instruction.substring(21,26));
+        InstructionShiftWire.setValue(instruction.substring(6));
+    }
+
+    private void decode(){
+
+
+        //controller
+        Controller.setInput(MipsUtils.fromStringtoBoolean(InstructionOpWire.getValue()));
+        Controller.execute();
+        JumpWire.set(Controller.isJump());
+        BNEWire.set(Controller.isBne());
+        BEQWire.set(Controller.isBeq());
+        MemToRegWire.set(Controller.isMemToReg());
+        UnsignedWire.set(Controller.isUnsigned());
+        MemWriteWire.set(Controller.isMemWrite());
+        MemReadWire.set(Controller.isMemRead());
+        ALUSrcWire.set(Controller.isALUSrc());
+        RegWriteWire.set(Controller.isRegWrite());
+        LUIWire.set(Controller.isLui());
+        MemDataStringWire.setValue(MipsUtils.fromBooleantoString(Controller.getMemData()));
+        ALUOpStringWire.setValue(MipsUtils.fromBooleantoString(Controller.getAluOp()));
+        RegDstStringWire.setValue(MipsUtils.fromBooleantoString(Controller.getRegDst()));
+
+        //WriteRegMux
+        WriteRegMux.set3Inputs(InstructionRtWire.getValue(),Integer.toBinaryString(31),InstructionRdWire.getValue(),Controller.getRegDst());
+        WriteRegStringWire.setValue(WriteRegMux.getOutput());
+
+        //RegMem
+        RegMem.read(InstructionRsWire.getValue(),InstructionRtWire.getValue(),WriteRegStringWire.getValue());
+        ReadDataReg1Wire.setValue(RegMem.getReadData1());
+        ReadDataReg2Wire.setValue(RegMem.getReadData2());
+
+        //Extender
+        Extender.setInput(InstructionConstWire.getValue(),UnsignedWire.get());
+        ExtenderOutWire.setValue(Extender.getOutput());
     }
 
     private void excute(){
@@ -193,24 +261,85 @@ public class Processor {
         ALUOpStringWire.setValue(MipsUtils.fromBooleantoString(Controller.getAluOp()));
         ALUController.setInputs(Controller.getAluOp(),MipsUtils.fromStringtoBoolean(InstructionFnWire.getValue()));
         ALUControllerOutWire.setValue(MipsUtils.fromBooleantoString(ALUController.getOp()));
+        JRWire.setValue(ALUController.getJr());
 
         //ALUMux
-        ALUMux.set2Inputs(ReadDataReg2Wire.getValue(),ExtenderOutWire.getValue(),ALUSrcWire.getValue().booleanValue());
+        ALUMux.set2Inputs(ReadDataReg2Wire.getValue(),ExtenderOutWire.getValue(),ALUSrcWire.get());
         ALUIn2Wire.setValue(ALUMux.getOutput());
 
         //ShamtMux
-        ShamtMux.set2Inputs("00000000000000000000000000010000",InstructionShamtWire.getValue(),LUIWire.getValue().booleanValue());
+        ShamtMux.set2Inputs(InstructionShamtWire.getValue(),"00000000000000000000000000010000",LUIWire.get());
         ShamtStringWire.setValue(ShamtMux.getOutput());
 
         //ALU
         ALUIn1Wire=ReadDataReg1Wire;
         ALU.setInputs(ALUControllerOutWire.getValue(),ALUIn1Wire.getValue(),ALUIn2Wire.getValue(),ShamtStringWire.getValue());
-        ALUZeroWire.setValue((Boolean)ALU.getZeroFlag());
+        ALUZeroWire.setValue(ALU.getZeroFlag());
         ALUResultWire.setValue(ALU.getOutput());
     }
 
+    private void toMemory(){
+        //DataMemory
+        WriteDataMemWire.setValue(ReadDataReg2Wire.getValue());
+        DataMemory.setAddress(ALUResultWire.getValue());
+        DataMemory.injectFlags(MemWriteWire.get(),MemReadWire.get(),MemDataStringWire.getValue());
+        DataMemory.setDataToWrite(WriteDataMemWire.getValue());
+        DataMemory.execute();
+        ReadDataMemWire.setValue(DataMemory.getDataRead());
+
+        //MemExtender
+        MemExtender.setInput(ReadDataMemWire.getValue(),UnsignedWire.get());
+        ExtenderMemOutWire.setValue(MemExtender.getOutput());
+    }
+
     private void setPC(){
-        //Adder
+        //PCAdder
+        PCAdder.setInputs(PCOutputStringWire.getValue());
+        PCAdderOutWire.setValue(PCAdder.getOutput());
+
+        //PCShifter
+        PCShifter.setInput(InstructionShiftWire.getValue());
+        JumpAddressWire.setValue(PCAdderOutWire.getValue().substring(0,4)+PCShifter.getOutput());
+
+        //BranchShifter
+        BranchShifterInWire.setValue(ExtenderOutWire.getValue());
+        BranchShifter.setInput(BranchShifterInWire.getValue());
+        BranchShifterOutWire.setValue(BranchShifter.getOutput());
+
+        //BranchAdder
+        BranchAdder.setInputs(PCAdderOutWire.getValue(),BranchShifterOutWire.getValue());
+        BranchAdderOutWire.setValue(BranchAdder.getOutput());
+
+        //BranchMux1
+        BranchOrInput1Wire.setValue(BNEWire.getValue()&&!ALUZeroWire.getValue());
+        BranchOrInput2Wire.setValue(BEQWire.getValue()&&ALUZeroWire.getValue());
+        BranchMuxSelectorWire.setValue(BranchOrInput1Wire.getValue()||BranchOrInput2Wire.getValue());
+        BranchMux1.set2Inputs(PCAdderOuttWire.getValue(),BranchAdderOutWire.getValue(),BranchMuxSelectorWire.getValue());
+        BranchMux1OutWire.setValue(BranchMux1.getOutput());
+
+        //BranchMux2
+        BranchMux2.set2Inputs(BranchMux1OutWire.getValue(),JumpAddressWire.getValue(),JumpWire.get());
+
+        //PCMux
+        PCMuxIn0Wire.setValue(BranchMux2.getOutput());
+        PCMuxIn1Wire.setValue(ReadDataReg1Wire.getValue());
+        PCMux.set2Inputs(PCMuxIn0Wire.getValue(),PCMuxIn1Wire.getValue(),JRWire.get());
+        PCInputStringWire.setValue(PCMux.getOutput());
+    }
+
+    private void writeBack(){
+        //MemMux1
+        MemMux1.set2Inputs(ALUResultWire.getValue(),ExtenderMemOutWire.getValue(),MemToRegWire.get());
+        MemMux1OutWire.setValue(MemMux1.getOutput());
+
+        //MemMux2
+        PCAdderOuttWire.setValue(PCAdderOutWire.getValue());
+        MemMux2.set2Inputs(MemMux1OutWire.getValue(),PCAdderOuttWire.getValue(),MipsUtils.fromStringtoBoolean(RegDstStringWire.getValue())[1]);
+
+        //RegMem
+        WriteDataRegWire.setValue(MemMux2.getOutput());
+        RegWriteAndOutputWire.setValue(!JRWire.getValue()&&RegWriteWire.getValue());
+        RegMem.write(RegWriteAndOutputWire.get(),WriteDataRegWire.getValue());
     }
 }
 
