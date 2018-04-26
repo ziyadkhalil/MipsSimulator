@@ -148,6 +148,5 @@ public class InstructionLine {
         return constant;
     }
 
-
 }
 

@@ -13,9 +13,15 @@ main:
 michael: add $a0 , $t1 , $t3
 add $a0 , $t1 , $t3
 add $a0 , $t1 , $t3
+
+
+
+
+
+
 addi $a0 , $zero , 1
 beq $a0 , $zero , main
-j main
+j main #asdsadafasfa
 j michael
 beq $s2, $zero , michael
 sub $s2 , $s0 , $s2
