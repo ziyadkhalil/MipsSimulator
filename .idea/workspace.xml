@@ -6,11 +6,8 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="02c8cb52-8400-4d70-a6a1-01c38c533281" name="Default" comment="Merge branch 'notMaster' of https://github.com/ZiyadKhalil/MipsSimulator&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/memory/MemElement.java">
-      <change beforePath="$PROJECT_DIR$/../MipsSimulator/.idea/misc.xml" afterPath="$PROJECT_DIR$/../MipsSimulator/.idea/misc.xml" />
-      <change beforePath="$PROJECT_DIR$/../MipsSimulator/.idea/vcs.xml" afterPath="$PROJECT_DIR$/../MipsSimulator/.idea/vcs.xml" />
+    <list default="true" id="02c8cb52-8400-4d70-a6a1-01c38c533281" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/../MipsSimulator/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../MipsSimulator/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/../MipsSimulator/MipsSimulator.iml" afterPath="$PROJECT_DIR$/../MipsSimulator/MipsSimulator.iml" />
     </list>
     <ignored path="$PROJECT_DIR$/..////////////////MipsSimulatorV0/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -44,10 +41,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Artboard 1@4x.png" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Artboard 1@4x.png" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../MipsSimulator/Diagram/Artboard 1@4x.png">
           <provider selected="true" editor-type-id="images">
             <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../MipsSimulator/.idea/workspace.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
           </provider>
         </entry>
       </file>
@@ -67,18 +74,6 @@
             <state relative-caret-position="63">
               <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="InstructionLine.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../MipsSimulator/src/assembler/InstructionLine.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2709">
-              <caret line="136" column="0" lean-forward="false" selection-start-line="136" selection-start-column="0" selection-end-line="136" selection-end-column="0" />
-              <folding>
-                <element signature="e#4998#4999#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -266,6 +261,11 @@
             <path>
               <item name="MipsSimulator" type="b2602c69:ProjectViewProjectNode" />
               <item name="MipsSimulator" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MipsSimulator" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MipsSimulator" type="462c0819:PsiDirectoryNode" />
+              <item name=".idea" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MipsSimulator" type="b2602c69:ProjectViewProjectNode" />
@@ -495,7 +495,7 @@
       <workItem from="1524562578211" duration="3271000" />
       <workItem from="1524577068834" duration="731000" />
       <workItem from="1524580347889" duration="2970000" />
-      <workItem from="1524758637016" duration="943000" />
+      <workItem from="1524758637016" duration="1038000" />
     </task>
     <task id="LOCAL-00001" summary="#0&#10;units package created to include units&#10;board package created to include the circuit">
       <created>1522402405806</created>
@@ -567,11 +567,18 @@
       <option name="project" value="LOCAL" />
       <updated>1524759545531</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Merge branch 'notMaster' of https://github.com/ZiyadKhalil/MipsSimulator&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/memory/MemElement.java">
+      <created>1524759596396</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1524759596396</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="203475000" />
+    <option name="totallyTimeSpent" value="203570000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1060" extended-state="6" />
@@ -831,13 +838,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../MipsSimulator/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../MipsSimulator/src/board/Processor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2961">
@@ -1008,6 +1008,14 @@
     <entry file="file://$PROJECT_DIR$/../MipsSimulator/Diagram/Artboard 1@4x.png">
       <provider selected="true" editor-type-id="images">
         <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../MipsSimulator/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
       </provider>
     </entry>
   </component>
