@@ -1,7 +1,5 @@
 package assembler;
 
-import assembler.instsruction.Instruction;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
@@ -11,7 +9,7 @@ public class Assembler {
     private int instructionIndex=0;
 
     private ArrayList<InstructionLine> instructions = new ArrayList<>();
-    private String path = "programs/input.text";
+    private String path = "programs\\input.txt";
     private ArrayList<String> tempInstructions = new ArrayList<>();
     private Map<String , String>  labels = new HashMap<>();
 

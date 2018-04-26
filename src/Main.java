@@ -12,6 +12,8 @@ import javafx.scene.shape.*;
 import javafx.stage.Stage;
 import units.ALUController;
 import units.Controller;
+import board.Processor;
+
 
 import javax.swing.text.html.ImageView;
 import java.awt.*;
@@ -19,6 +21,8 @@ import java.io.FileNotFoundException;
 
 public class Main extends Application {
     public static void main (String[] args) throws FileNotFoundException {
+        Processor Processor=new Proseccor();
+        Processor.process();
         launch(args);
         //Assembler a = new Assembler();
       //  a.assemble();
