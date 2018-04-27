@@ -57,7 +57,7 @@ public abstract class Instruction {
         }
         return inst;
     }
-    public abstract FormatType getFormatType();
+    public abstract FormatType  getFormatType();
     public abstract String getOpCode();
     protected abstract void setFormatType();
     protected abstract void setOpCode();
