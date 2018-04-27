@@ -21,6 +21,8 @@ import java.io.FileNotFoundException;
 
 public class Main extends Application {
     public static void main (String[] args) throws FileNotFoundException {
+        Processor Processor=new Proseccor();
+        Processor.process();
         launch(args);
         Assembler a = new Assembler();
         a.assemble();

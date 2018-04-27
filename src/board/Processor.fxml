@@ -9,11 +9,11 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="690.0" prefWidth="920.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ImageView fitHeight="690.0" fitWidth="920.0" pickOnBounds="true" preserveRatio="true" visible="false">
+      /*<ImageView fitHeight="690.0" fitWidth="920.0" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
             <Image url="@../Diagram/Artboard%201@4x.png" />
          </image>
-      </ImageView>
+      </ImageView>*/
       <SVGPath fx:id="Jump" content="M0,144.9h285.6 M285.6,144.9V74.7 M285.6,74.7h240.5 M526.1,74.7V0" fill="#0000003a" layoutX="312.0" layoutY="144.0" scaleX="0.69" scaleY="0.69" stroke="BLACK" />
       <SVGPath fx:id="BNE" content="M0,56.2h301.1 M301.1,56.2V0.5 M301.1,0.5h45.3" layoutX="344.0" layoutY="228.5" scaleX="0.69" scaleY="0.69" stroke="BLACK" />
       <SVGPath fx:id="BEQ" content="M0,0.5h342.6" layoutX="346.0" layoutY="287.5" scaleX="0.69" scaleY="0.69" stroke="BLACK" />
