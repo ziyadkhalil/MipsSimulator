@@ -1,0 +1,9 @@
+<application>
+  <component name="ConsoleFoldingSettings">
+    <option name="addedPositive">
+      <list>
+        <option value="onAction='#Delete'" />
+      </list>
+    </option>
+  </component>
+</application>
