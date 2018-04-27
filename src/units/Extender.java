@@ -9,6 +9,7 @@ public class Extender {
     public void setInput(String input,boolean Unsigned) {
         this.input = input;
         this.Unsigned=Unsigned;
+        System.out.println("what?"+input);
         extend();
     }
 

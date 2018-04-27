@@ -21,6 +21,6 @@ public class Adder {
     }
 
     public String getOutput() {
-        return Long.toBinaryString(output);
+        return MipsUtils.extend32(Long.toBinaryString(output));
     }
 }

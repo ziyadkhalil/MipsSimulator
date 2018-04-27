@@ -22,7 +22,7 @@ public class ALU {
     */
 
     public void setInputs(String Op, String First, String Second, String shamt){
-        this.opInt=Integer.parseInt(Op);           //no negative to handle
+        this.opInt=Integer.parseInt(Op,2);           //no negative to handle
         firstLong=MipsUtils.stringToLong(First);
         secondLong=MipsUtils.stringToLong(Second);
         shamtLong=MipsUtils.stringToLong(shamt);
@@ -60,7 +60,8 @@ public class ALU {
     }
 
     public String getOutput(){
-        return Long.toBinaryString(outputLong);
+
+        return MipsUtils.extend32(Integer.toBinaryString((int)outputLong));
     }
     public boolean getZeroFlag(){
         return zeroFlag;

@@ -26,7 +26,7 @@ public class Mux {
         select();
     }
 
-    private void select(){
+    private void    select(){
         if(!selection1&&!selection2)
             output=firstInput;
         else if(selection1&&!selection2)

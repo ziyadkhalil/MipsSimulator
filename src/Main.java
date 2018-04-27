@@ -3,6 +3,7 @@ import assembler.InstructionLine;
 import assembler.instsruction.IInstruction;
 import assembler.instsruction.Instruction;
 import assembler.instsruction.RInstruction;
+import board.Processor;
 import com.sun.javafx.geom.Path2D;
 import javafx.application.Application;
 import javafx.scene.Parent;
@@ -21,21 +22,10 @@ import java.io.FileNotFoundException;
 
 public class Main extends Application {
     public static void main (String[] args) throws FileNotFoundException {
-        Processor Processor=new Proseccor();
-        Processor.process();
+        Processor processor=new Processor();
+        processor.process();
         launch(args);
-        Assembler a = new Assembler();
-        a.assemble();
-        String[] insts = new String[] {
-                "add","sub","mul","nor","or","and","slt","sltu","sll","srl"
-                ,"beq","lw","sw","lb","lbu","sb","lh","sh","addi","slti","sltiu","bne","andi","ori","lui","lhu"
 
-        };
-        for (String inst:
-             insts) {
-            MipsUtils.Hh_hh(Instruction.createInstruction(inst));
-
-        }
 
     }
 

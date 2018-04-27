@@ -64,8 +64,8 @@ public class Controller  {
         jal = !opCode[5] && !opCode[4] && !opCode[3] && !opCode[2] && opCode[1] && opCode[0];
 
 
-        regDst[1] = jal;
-        regDst[0] = r_format;
+        regDst[1] = r_format ;
+        regDst[0] = jal;
         ALUSrc = lw || sw || addi || slti || sltiu || lui || ori || andi || lh || lhu || lb || lbu || sb || sh;
         memToReg = lw || lh || lhu || lb || lbu;
         regWrite =  r_format || lw || addi || slti || sltiu || lui || ori || andi || lh || lhu || lb || lbu || jal;

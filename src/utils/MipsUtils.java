@@ -44,6 +44,7 @@ public class MipsUtils {
 
 
     public static boolean[] fromStringtoBoolean(String s) {
+        System.out.println(s);
         boolean[] b = new boolean[s.length()];
         for (int k = 0; k < s.length(); k++) {
             if (s.charAt(k) == '1') {
@@ -77,5 +78,23 @@ public class MipsUtils {
             return Long.parseLong(s,2);
         else
             return (-2147483648+Long.parseLong(s.substring(1),2));
+    }
+
+    public static String extend32(String s) {
+
+        while (s.length() < 32)
+            s = "0" + s;
+        if(s.length()>32)
+            s=s.substring(0,32);
+        return s;
+    }
+    public static String extend64 (String s ){
+            if (s.charAt(0)=='0')
+                while (s.length()<64)
+                    s='0'+s;
+            else
+                while (s.length()<64)
+                    s='1'+s;
+            return s;
     }
 }
