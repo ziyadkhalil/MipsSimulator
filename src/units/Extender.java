@@ -6,6 +6,12 @@ public class Extender {
     private boolean Unsigned;
 
 
+    public void setInput(String input) {
+        this.input = input;
+        this.Unsigned=Unsigned;
+        System.out.println("what?"+input);
+        extendSigned();
+    }
     public void setInput(String input,boolean Unsigned) {
         this.input = input;
         this.Unsigned=Unsigned;
@@ -19,8 +25,21 @@ public class Extender {
                 output = "000000000000000000000000" + input;
             else
                 output = "111111111111111111111111" + input;
-        } else {
+        } else if (input.length()==16) {
             if (Unsigned || input.charAt(0)=='0')
+                output = "0000000000000000" + input;
+            else
+                output = "1111111111111111" + input;
+        }
+    }
+    private void extendSigned() {
+        if (input.length() == 8) {
+            if (input.charAt(0)=='0')
+                output = "000000000000000000000000" + input;
+            else
+                output = "111111111111111111111111" + input;
+        } else if (input.length()==16) {
+            if (input.charAt(0)=='0')
                 output = "0000000000000000" + input;
             else
                 output = "1111111111111111" + input;
