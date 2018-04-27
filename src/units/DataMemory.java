@@ -14,13 +14,14 @@ public class DataMemory {
     private String memOp ;
     private String address;
     private String dataToWrite;
-    private String dataRead;
+    private String dataRead = "11111111111111111111111111111111";
     private int offset;
     public DataMemory() {
         memory = new HashMap<>();
     }
     public void setAddress (String address){
-        int temp = Integer.parseInt(address,2);
+        long tempTemp = Long.parseLong(address,2);
+        int temp = (int) tempTemp;
         offset = temp%4;
         temp-=offset;
         String x = Integer.toString(temp,2);

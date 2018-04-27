@@ -10,6 +10,7 @@ public class ALU {
     private boolean zeroFlag;
     /*
     Operations guide
+    mul=128
     nor=64
     slt=56
     sub=48
@@ -17,17 +18,26 @@ public class ALU {
     or=8
     sll=4
     srl=2
-    mul=1
+    unsigned=1
     and=0
     */
 
     public void setInputs(String Op, String First, String Second, String shamt){
-        this.opInt=Integer.parseInt(Op);           //no negative to handle
-        firstLong=MipsUtils.stringToLong(First);
-        secondLong=MipsUtils.stringToLong(Second);
+        this.opInt=Integer.parseInt(Op,2);           //no negative to handle
+        if(opInt==1){
+            firstLong=Long.parseLong(First,2);
+            secondLong=Long.parseLong(Second,2);
+        }
+        else {
+            firstLong=MipsUtils.stringToLong(First);
+            secondLong=MipsUtils.stringToLong(Second);
+        }
         shamtLong=MipsUtils.stringToLong(shamt);
 
         switch (opInt){
+            case 128:
+                outputLong=firstLong*secondLong;
+                break;
             case 64:
                 outputLong=~(firstLong|secondLong);
                 break;
@@ -50,7 +60,7 @@ public class ALU {
                 outputLong=secondLong>>shamtLong;          //Read Data1 =0
                 break;
             case 1:
-                outputLong=firstLong*secondLong;
+                outputLong=(firstLong<secondLong)? 1:0;
                 break;
             case 0:
                 outputLong=firstLong&secondLong;
@@ -60,7 +70,8 @@ public class ALU {
     }
 
     public String getOutput(){
-        return Long.toBinaryString(outputLong);
+
+        return MipsUtils.extend32(Integer.toBinaryString((int)outputLong));
     }
     public boolean getZeroFlag(){
         return zeroFlag;
