@@ -256,7 +256,7 @@ public class Processor {
         ReadDataReg2Wire.setValue(RegMem.getReadData2());
 
         //Extender
-        Extender.setInput(InstructionConstWire.getValue(),UnsignedWire.get());
+        Extender.setInput(InstructionConstWire.getValue());
         ExtenderOutWire.setValue(Extender.getOutput());
     }
 
@@ -348,5 +348,6 @@ public class Processor {
     public void printRegisters(){ //TESTING METHOD
         RegMem.printRegisters();
     }
+
 }
 
