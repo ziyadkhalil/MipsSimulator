@@ -11,10 +11,11 @@ public class ALUController {
     boolean srl;
     boolean and;
     boolean or;
-    boolean mul;
+    boolean unsigned;
     boolean nor;
     boolean jr;
-    boolean[] Op=new boolean[7];
+    boolean mul;
+    boolean[] Op=new boolean[8];
 
 
     public void setInputs(boolean[] ALUOp ,boolean[] Fn){
@@ -32,22 +33,24 @@ public class ALUController {
         nor=(!ALUOp[2]&&ALUOp[1]&&!ALUOp[0]&& Fn[5]&& !Fn[4]&& !Fn[3]&& Fn[2]&& Fn[1]&& Fn[0]);
         jr=(!ALUOp[2]&&ALUOp[1]&&!ALUOp[0]&& !Fn[5]&& !Fn[4]&& Fn[3]&& !Fn[2]&& !Fn[1]&& !Fn[0]);
         srl=(!ALUOp[2]&&ALUOp[1]&&!ALUOp[0]&& !Fn[5]&& !Fn[4]&& !Fn[3]&& !Fn[2]&& Fn[1]&& !Fn[0]);
+        mul=(!ALUOp[2]&&ALUOp[1]&&!ALUOp[0]&& !Fn[5]&& Fn[4]&& Fn[3]&& !Fn[2]&& !Fn[1]&& !Fn[0]);
 
         //only other instructions
-        mul=(ALUOp[2]&& ALUOp[1] && ALUOp[0]);
+        unsigned=(ALUOp[2]&& ALUOp[1] && ALUOp[0])||(Fn[5]&& !Fn[4]&& Fn[3]&& !Fn[2]&& Fn[1]&& Fn[0]);
 
         setOp();
 
     }
 
     private void setOp(){
-        Op[0]=mul;
+        Op[0]=unsigned;
         Op[1]=srl;
         Op[2]=sll;
         Op[3]=or || slt;
         Op[4]=add || sub || slt;
         Op[5]=sub || slt;
         Op[6]=nor;
+        Op[7]=mul;
     }
     public boolean[] getOp(){
         return Op;
