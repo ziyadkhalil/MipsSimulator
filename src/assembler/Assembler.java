@@ -18,9 +18,8 @@ public class Assembler {
         handleLabels();
         handleLines();
         for(int i=0;i<instructions.size();i++)
-           System.out.println((i+1)+": "+Long.toString(Long.parseLong(instructions.get(i).getCode(),2),16));            //HEX
-       //     System.out.println((i+1)+" "+instructions.get(i).getCode());                                                      //BINARY
-
+//           System.out.println((i+1)+": "+Long.toString(Long.parseLong(instructions.get(i).getCode(),2),16));            //HEX
+            System.out.println((i+1)+" "+instructions.get(i).getCode());                                                      //BINARY
     }
     private void readInput() throws FileNotFoundException {
         File input = new File(path);

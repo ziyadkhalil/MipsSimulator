@@ -6,6 +6,8 @@ import units.Register;
 
 import java.util.Map;
 
+import static utils.MipsUtils.setBits;
+
 public class InstructionLine {
 
     private static Map<String,String> labels;
@@ -40,7 +42,15 @@ public class InstructionLine {
             case I_FLOW_CONTROL:
                 setI_FLOW_CONTROL(line);
                 break;
+            case R_JUMPING:
+                ssetR_JUMPING(line);
+                break;
         }
+    }
+
+    private void ssetR_JUMPING(String line){
+        rs = Register.getCodeAssembler(line.trim());
+        code="000000"+setBits(rs,5)+"000000000000000"+instruction.getOpCode();
     }
 
     private void setJ(String line) {
@@ -63,13 +73,20 @@ public class InstructionLine {
     }
 
     private void setI_ARITHMETIC(String line) {
-        rt = Register.getCodeAssembler(line.substring(0, line.indexOf(",")).trim());
-        line = line.substring(line.indexOf(",") + 1);
-        rs = Register.getCodeAssembler(line.substring(0, line.indexOf(",")).trim());
-        line = line.substring(line.indexOf(",") + 1).trim();
-        constant = Integer.parseInt(line);
-
-        code=instruction.getOpCode()+setBits(rs,5)+setBits(rt,5)+setBitsConst(constant,16);
+        if(instruction.getOpCode().equals("001111")){
+            rt = Register.getCodeAssembler(line.substring(0, line.indexOf(",")).trim());
+            line = line.substring(line.indexOf(",") + 1).trim();
+            constant = Integer.parseInt(line);
+            code=instruction.getOpCode()+"00000"+setBits(rt,5)+setBitsConst(constant,16);
+        }
+        else{
+            rt = Register.getCodeAssembler(line.substring(0, line.indexOf(",")).trim());
+            line = line.substring(line.indexOf(",") + 1).trim();
+            rs = Register.getCodeAssembler(line.substring(0, line.indexOf(",")).trim());
+            line = line.substring(line.indexOf(",") + 1).trim();
+            constant = Integer.parseInt(line);
+            code=instruction.getOpCode()+setBits(rs,5)+setBits(rt,5)+setBitsConst(constant,16);
+        }
     }
 
     private void setI_FLOW_CONTROL(String line) {
@@ -147,7 +164,6 @@ public class InstructionLine {
     public int getConstant() {
         return constant;
     }
-
 
 }
 

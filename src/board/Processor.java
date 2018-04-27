@@ -12,6 +12,8 @@ import javafx.scene.shape.SVGPath;
 import units.*;
 import utils.MipsUtils;
 
+import java.io.FileNotFoundException;
+
 public class Processor {
     //@FXML SVGPath Jump;
     BooleanProperty JumpWire=new SimpleBooleanProperty();
@@ -195,11 +197,11 @@ public class Processor {
     //Variables
     private String instruction;
     private static int i;
-    private  String PCAddress= Integer.toBinaryString(Assembler.getInitialLocation());
+    private  String PCAddress= MipsUtils.extend32(Integer.toBinaryString(Assembler.getInitialLocation()));
 
-    public void process(){
+    public void process() throws FileNotFoundException {
         Assembler.assemble();
-
+        PCOutputStringWire.setValue(PCAddress);
         for(i=0;i<Assembler.getInstructions().size();i++) {
             fetch();
             decode();
@@ -207,11 +209,12 @@ public class Processor {
             toMemory();
             setPC();
             writeBack();
+            printRegisters(); //for Testing
         }
     }
 
     private void fetch(){
-        instruction=((InstructionLine)Assembler.getInstructions().get(i)).getCode();  //TODO get it from InstructionMem
+        instruction= Assembler.getInstructions().get(i).getCode();  //TODO get it from InstructionMem
         //instructionWires
         InstructionOpWire.setValue(instruction.substring(0,6));
         InstructionRsWire.setValue(instruction.substring(6,11));
@@ -220,6 +223,7 @@ public class Processor {
         InstructionConstWire.setValue(instruction.substring(16));
         InstructionShamtWire.setValue(instruction.substring(21,26));
         InstructionShiftWire.setValue(instruction.substring(6));
+        InstructionFnWire.setValue(instruction.substring(26,32));
     }
 
     private void decode(){
@@ -252,7 +256,7 @@ public class Processor {
         ReadDataReg2Wire.setValue(RegMem.getReadData2());
 
         //Extender
-        Extender.setInput(InstructionConstWire.getValue(),UnsignedWire.get());
+        Extender.setInput(InstructionConstWire.getValue());
         ExtenderOutWire.setValue(Extender.getOutput());
     }
 
@@ -334,12 +338,16 @@ public class Processor {
 
         //MemMux2
         PCAdderOuttWire.setValue(PCAdderOutWire.getValue());
-        MemMux2.set2Inputs(MemMux1OutWire.getValue(),PCAdderOuttWire.getValue(),MipsUtils.fromStringtoBoolean(RegDstStringWire.getValue())[1]);
+        MemMux2.set2Inputs(MemMux1OutWire.getValue(),PCAdderOuttWire.getValue(),MipsUtils.fromStringtoBoolean(RegDstStringWire.getValue())[0]);
 
         //RegMem
         WriteDataRegWire.setValue(MemMux2.getOutput());
         RegWriteAndOutputWire.setValue(!JRWire.getValue()&&RegWriteWire.getValue());
         RegMem.write(RegWriteAndOutputWire.get(),WriteDataRegWire.getValue());
     }
+    public void printRegisters(){ //TESTING METHOD
+        RegMem.printRegisters();
+    }
+
 }
 

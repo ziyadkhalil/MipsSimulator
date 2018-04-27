@@ -1,0 +1,31 @@
+main:
+
+
+
+
+
+
+
+
+
+
+ add $a0 , $t1 , $t3 #kosom dma8i
+michael: add $a0 , $t1 , $t3
+add $a0 , $t1 , $t3
+add $a0 , $t1 , $t3
+
+
+
+
+
+
+addi $a0 , $zero , 1
+beq $a0 , $zero , main
+j main #asdsadafasfa
+j michael
+beq $s2, $zero , michael
+sub $s2 , $s0 , $s2
+addi $s2 , $s3, 5
+lw $t1,4($s1)
+jal main
+addi $s2,$s2,17

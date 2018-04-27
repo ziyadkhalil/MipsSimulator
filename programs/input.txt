@@ -1,1 +1,1 @@
-sub $t5, $t1, $t7
+addi $t1 , $zero ,-8
