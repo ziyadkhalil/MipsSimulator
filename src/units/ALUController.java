@@ -36,7 +36,7 @@ public class ALUController {
         mul=(!ALUOp[2]&&ALUOp[1]&&!ALUOp[0]&& !Fn[5]&& Fn[4]&& Fn[3]&& !Fn[2]&& !Fn[1]&& !Fn[0]);
 
         //only other instructions
-        unsigned=(ALUOp[2]&& ALUOp[1] && ALUOp[0])||(Fn[5]&& !Fn[4]&& Fn[3]&& !Fn[2]&& Fn[1]&& Fn[0]);
+        unsigned=(ALUOp[2]&& ALUOp[1] && ALUOp[0])||(!ALUOp[2]&&ALUOp[1]&&!ALUOp[0]&&Fn[5]&& !Fn[4]&& Fn[3]&& !Fn[2]&& Fn[1]&& Fn[0]);
 
         setOp();
 
