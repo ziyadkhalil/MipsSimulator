@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.SVGPath?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="886.0" prefWidth="1129.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane fx:id="Circuit" layoutX="112.0" layoutY="96.0" maxHeight="712.0" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="712.0" prefWidth="934.0" scaleX="1.3" scaleY="1.3">
+         <children>
+            <SVGPath fx:id="Jump" content="M0,144.9h285.6 M285.6,144.9V74.7 M285.6,74.7h240.5 M526.1,74.7V0" fill="#0000003a" layoutX="312.0" layoutY="144.0" scaleX="0.69" scaleY="0.69" stroke="BLACK" />
+            <SVGPath fx:id="BNE" content="M0,56.2h301.1 M301.1,56.2V0.5 M301.1,0.5h45.3" layoutX="344.0" layoutY="228.5" scaleX="0.69" scaleY="0.69" stroke="BLACK" />
+            <SVGPath fx:id="BEQ" content="M0,0.5h342.6" layoutX="346.0" layoutY="287.5" scaleX="0.69" scaleY="0.69" stroke="BLACK" />
+            <SVGPath fx:id="MemToReg" content="M584.4,0.5v240.3 M0,0.5h584.4" layoutX="311.0" layoutY="261.0" scaleX="0.69" scaleY="0.69" stroke="BLACK" />
+            <SVGPath fx:id="MemData" content="M393.7,1v161.6 M0,1h393.7" layoutX="346.0" layoutY="300.5" scaleX="0.72" scaleY="0.7" stroke="BLACK" />
+            <SVGPath fx:id="MemWrite" content="M408,1v167.4 M0,1h408" layoutX="326.0" layoutY="304.0" scaleX="0.64" scaleY="0.6" stroke="BLACK" />
+            <SVGPath fx:id="ALUSrc" content="M0,0.5h186 M186,0.5v191.6" layoutX="367.0" layoutY="325.0" scaleX="0.69" scaleY="0.69" stroke="BLACK" />
+            <SVGPath fx:id="Unsigned" content="M518,207V0.5 M0,0.5h518 M518,185.6h-41 M477,185.6v341.9 M477,527.5H53.6 M53.6,527.5v-115" layoutX="321.0" layoutY="230.0" scaleX="0.69" scaleY="0.69" stroke="BLACK" />
+            <SVGPath content="M41,0c2.1,0,3.8,1.7,3.8,3.8S43.1,7.5,41,7.5c-2.1,0-3.8-1.7-3.8-3.8S38.9,0,41,0z" layoutX="718.0" layoutY="436.0" scaleX="0.69" scaleY="0.69" stroke="BLACK" />
+            <SVGPath fx:id="RegDst" content="M108.8,1H1 M1,1v267.4 M1,268.4h128.9 M129.9,268.4l0.5-15.7 M1,268.4v172 M1,440.4h767.9 M768.9,440.4l0.5-27.2" layoutX="154.0" layoutY="296.0" scaleX="0.69" scaleY="0.697" stroke="BLACK" />
+            <SVGPath content="M0,3.8C0,1.7,1.7,0,3.8,0s3.8,1.7,3.8,3.8c0,2.1-1.7,3.8-3.8,3.8S0,5.8,0,3.8z" layoutX="269.0" layoutY="547.0" scaleX="0.69" scaleY="0.69" stroke="BLACK" />
+            <SVGPath fx:id="LUI" content="M105.2,0.5H0.5 M0.5,0.5v374.7 M0.5,375.2h447.6 M447.7,323.2l0.4,52" layoutX="216.0" layoutY="324.0" scaleX="0.69" scaleY="0.69" stroke="BLACK" />
+            <SVGPath fx:id="MemRead" content="M442.6,0.5H0.5 M0.5,0.5v478.1 M0.5,478.6h903 M903.5,478.6V303.9" layoutX="-104.0" layoutY="277.0" scaleX="0.69" scaleY="0.69" stroke="BLACK" />
+            <SVGPath fx:id="ALUOp" content="M223.8,348.3V365 M142.1,365h81.7 M142.1,365V1 M142.1,1L0,2.5" layoutX="354.5" layoutY="311.0" scaleX="0.69" scaleY="0.69" stroke="BLACK" />
+            <SVGPath fx:id="RegWrite" content="M27.2,33.2H35 M64.9,0.5v8.4 M0,0.5h64.9 M64.9,8.9H27.2 M27.2,8.9v24.3" layoutX="371.0" layoutY="377.0" scaleX="0.69" scaleY="0.69" stroke="BLACK" />
+            <SVGPath fx:id="PCInput" content="M0.5,0v154.8 M0.5,154.8h86.4" layoutX="71.0" layoutY="311.0" scaleX="0.69" scaleY="0.69" stroke="BLACK" />
+            <SVGPath fx:id="PCMuxInput0" content="M1022.5,171.8V0.5 M963.6,171.8h58.9 M1022.5,0.5H0.5 M0.5,0.5v431.1" layoutX="-58.0" layoutY="-45.0" scaleX="0.69" scaleY="0.69" stroke="BLACK" />
+            <SVGPath content="M49.5,7.5c2.1,0,3.8-1.7,3.8-3.8S51.6,0,49.5,0c-2.1,0-3.8,1.7-3.8,3.8S47.5,7.5,49.5,7.5z" layoutX="11.0" layoutY="9.0" />
+            <SVGPath fx:id="PCAdderOutput" content="M0,139.8h555.2 M509.5,139.8v-30 M509.5,109.8h152.6 M81.8,139.8l0.2-46 M12.3,139.8V0.5 M12.3,0.5h888 M900.3,0.5v857.3 M900.3,857.8h-88.9 M82.3,93.3h222 M304.2,93.8v-44" layoutX="111.0" layoutY="-88.0" scaleX="0.693" scaleY="0.69" stroke="BLACK" />
+            <SVGPath fx:id="PCShifterOutput" content="M458.6,0.5v60 M0,0.5h458.6 M458.6,60.5h14.8" layoutX="351.0" layoutY="70.0" scaleX="0.69" scaleY="0.69" stroke="BLACK" />
+            <SVGPath fx:id="PCMuxInput1" content="M1356,101M762,646.1V335 M762,335H120.7 M120.7,335v138.8" layoutX="-150.0" layoutY="-160.0" scaleX="0.69" scaleY="0.69" stroke="BLACK" />
+            <SVGPath fx:id="BranchMuxSelector" content="M0.5,0v98.2 M0.5,98.2H30 M30,98.2v46.7 M12.4,144.9l17.6,0" layoutX="711.0" layoutY="144.0" scaleX="0.69" scaleY="0.69" stroke="BLACK" />
+            <SVGPath fx:id="BranchOrInput1" content="M0,0.5h13.4 M13.4,0.5v20.9 M13.4,21.4h18.6" layoutX="664.0" layoutY="241.0" scaleX="0.69" scaleY="0.69" stroke="BLACK" />
+            <SVGPath fx:id="BranchOrInput2" content="M0,11.4h36.3 M36.3,11.4V0.5 M36.3,0.5h50.5" layoutX="637.0" layoutY="269.0" scaleX="0.27" scaleY="0.7" stroke="BLACK" />
+            <SVGPath fx:id="BranchAdderPath" content="M0.9,116.6V77.4l32.7-18.9L0.5,38.8v-38l58.9,34.6v47.4C59.4,82.9,15.4,108.2,0.9,116.6" fill="#00000069" layoutX="626.0" layoutY="108.0" scaleX="0.69" scaleY="0.69" stroke="#00000069" />
+            <SVGPath fx:id="BranchOr" content="M54.9,21.8c-9.6,12.6-24.8,20.8-41.8,20.8H1.8c3.7-6.2,5.8-13.3,5.8-20.8S5.5,7.2,1.8,1h11.3C30.1,1,45.2,9.1,54.9,21.8z" fill="#00000069" layoutX="677.0" layoutY="245.0" scaleX="0.69" scaleY="0.69" stroke="#00000069" />
+            <SVGPath fx:id="BranchMux2Path" content="M0.5,67.4V10.2c0-5.4,4.4-9.7,9.7-9.7h1c5.4,0,9.7,4.4,9.7,9.7v57.2c0,5.4-4.4,9.7-9.7,9.7h-1C4.9,77.2,0.5,72.8,0.5,67.4z" fill="#00000069" layoutX="747.0" layoutY="100.0" scaleX="0.69" scaleY="0.69" stroke="#00000069" />
+            <SVGPath fx:id="BNEAnd" content="M27,33.1H0.8V0.8H27c10.8,0,19.6,7.2,19.6,16.2S37.8,33.1,27,33.1z" fill="#00000069" layoutX="628.0" layoutY="227.0" scaleX="0.69" scaleY="0.69" stroke="#00000069" />
+            <SVGPath fx:id="BEQAnd" content="M27,33.1H0.8V0.8H27c10.8,0,19.6,7.2,19.6,16.2S37.8,33.1,27,33.1z" fill="#00000069" layoutX="628.0" layoutY="262.0" scaleX="0.69" scaleY="0.69" stroke="#00000069" />
+            <SVGPath fx:id="PCAdderPath" content="M0.9,116.6V77.4l32.7-18.9L0.5,38.8v-38l58.9,34.6v47.4C59.4,82.9,15.4,108.2,0.9,116.6" fill="#00000069" layoutX="199.0" layoutY="91.0" scaleX="0.69" scaleY="0.69" stroke="#00000069" />
+            <SVGPath fx:id="BranchMux1Path" content="M0.5,67.4V10.2c0-5.4,4.4-9.7,9.7-9.7h1c5.4,0,9.7,4.4,9.7,9.7v57.2c0,5.4-4.4,9.7-9.7,9.7h-1C4.9,77.2,0.5,72.8,0.5,67.4z" fill="#00000069" layoutX="705.0" layoutY="100.0" scaleX="0.69" scaleY="0.69" stroke="#00000069" />
+            <SVGPath fx:id="MemMux1Path" content="M0.5,67.4V10.2c0-5.4,4.4-9.7,9.7-9.7h1c5.4,0,9.7,4.4,9.7,9.7v57.2c0,5.4-4.4,9.7-9.7,9.7h-1C4.9,77.2,0.5,72.8,0.5,67.4z" fill="#00000069" layoutX="796.0" layoutY="454.0" scaleX="0.69" scaleY="0.69" stroke="#00000069" />
+            <SVGPath fx:id="ShamtMuxPath" content="M0.5,67.4V10.2c0-5.4,4.4-9.7,9.7-9.7h1c5.4,0,9.7,4.4,9.7,9.7v57.2c0,5.4-4.4,9.7-9.7,9.7h-1C4.9,77.2,0.5,72.8,0.5,67.4z" fill="#00000069" layoutX="585.0" layoutY="546.0" scaleX="0.55" scaleY="0.5" stroke="#00000069" />
+            <SVGPath fx:id="MemMux2Path" content="M0.5,67.4V10.2c0-5.4,4.4-9.7,9.7-9.7h1c5.4,0,9.7,4.4,9.7,9.7v57.2c0,5.4-4.4,9.7-9.7,9.7h-1C4.9,77.2,0.5,72.8,0.5,67.4z" fill="#00000069" layoutX="796.0" layoutY="587.0" scaleX="0.69" scaleY="0.69" stroke="#00000069" />
+            <SVGPath fx:id="ALUSrcMux" content="M0.5,67.4V10.2c0-5.4,4.4-9.7,9.7-9.7h1c5.4,0,9.7,4.4,9.7,9.7v57.2c0,5.4-4.4,9.7-9.7,9.7h-1C4.9,77.2,0.5,72.8,0.5,67.4z" fill="#00000069" layoutX="514.0" layoutY="476.0" scaleX="0.69" scaleY="0.69" stroke="#00000069" />
+            <SVGPath fx:id="WriteRegMuxPath" content="M0.5,67.4V10.2c0-5.4,4.4-9.7,9.7-9.7h1c5.4,0,9.7,4.4,9.7,9.7v57.2c0,5.4-4.4,9.7-9.7,9.7h-1C4.9,77.2,0.5,72.8,0.5,67.4z" fill="#00000069" layoutX="352.0" layoutY="476.0" scaleX="0.69" scaleY="0.69" stroke="#00000069" />
+            <SVGPath fx:id="RegWriteAnd" content="M27,33.1H0.8V0.8H27c10.8,0,19.6,7.2,19.6,16.2S37.8,33.1,27,33.1z" fill="#00000069" layoutX="399.0" layoutY="390.0" scaleX="0.69" scaleY="0.69" stroke="#00000069" />
+            <SVGPath fx:id="PCShifterPath" content="M54.2,40.3c0,22-12,39.8-26.9,39.8S0.5,62.3,0.5,40.3s12-39.8,26.9-39.8S54.2,18.3,54.2,40.3z" fill="#00000069" layoutX="377.0" layoutY="40.0" scaleX="0.69" scaleY="0.69" stroke="#00000069" />
+            <SVGPath fx:id="BranchShifterPath" content="M54.2,40.3c0,22-12,39.8-26.9,39.8S0.5,62.3,0.5,40.3s12-39.8,26.9-39.8S54.2,18.3,54.2,40.3z" fill="#00000069" layoutX="536.0" layoutY="153.0" scaleX="0.69" scaleY="0.69" stroke="#00000069" />
+            <SVGPath fx:id="ControllerPath" content="M90.6,104.4c0,57.4-20.2,103.9-45,103.9s-45-46.5-45-103.9S20.7,0.5,45.5,0.5S90.6,47,90.6,104.4z" fill="#00000069" layoutX="324.0" layoutY="210.0" scaleX="0.69" scaleY="0.69" />
+            <SVGPath fx:id="RegMemPath" content="M129,167.2H0.5V0.5H129V167.2z" fill="#00000069" layoutX="374.0" layoutY="399.0" scaleX="0.69" scaleY="0.69" stroke="#00000069" />
+            <SVGPath fx:id="DataMem" content="M129,167.2H0.5V0.5H129V167.2z" fill="#00000069" layoutX="619.0" layoutY="416.0" scaleX="0.615" scaleY="0.72" stroke="#00000069" />
+            <SVGPath fx:id="InstructionMem" content="M129,167.2H0.5V0.5H129V167.2z" fill="#00000069" layoutX="164.0" layoutY="404.0" scaleX="0.55" scaleY="0.66" stroke="#00000069" />
+            <SVGPath fx:id="ALUPath" content="M1.1,132.3V87.7l11.1-21.1L0.5,43.9V0.8l80.1,39.3v53.9C80.6,93.9,20.8,122.7,1.1,132.3" fill="#00000069" layoutX="545.0" layoutY="402.0" scaleX="0.69" scaleY="0.69" stroke="#00000069" />
+            <SVGPath fx:id="ALUControl" content="M42.1,44.7c0,24.4-9.3,44.2-20.8,44.2S0.5,69.1,0.5,44.7S9.8,0.5,21.3,0.5S42.1,20.3,42.1,44.7z" fill="#00000069" layoutX="523.5" layoutY="534.0" scaleX="0.69" scaleY="0.69" stroke="#00000069" />
+            <SVGPath fx:id="NormalExtender" content="M57.5,57.5h-57v-57h57V57.5z" fill="#00000069" layoutX="410.0" layoutY="548.0" scaleX="0.69" scaleY="0.69" stroke="#00000069" />
+            <SVGPath fx:id="MemExtemder" content="M57.5,57.5h-57v-57h57V57.5z" fill="#00000069" layoutX="731.0" layoutY="444.0" scaleX="0.69" scaleY="0.69" stroke="#00000069" />
+            <SVGPath fx:id="PCMuxPath" content="M0.5,67.4V10.2c0-5.4,4.4-9.7,9.7-9.7h1c5.4,0,9.7,4.4,9.7,9.7v57.2c0,5.4-4.4,9.7-9.7,9.7h-1C4.9,77.2,0.5,72.8,0.5,67.4z" fill="#00000069" layoutX="74.0" layoutY="288.0" rotate="90.0" scaleX="0.69" scaleY="0.69" stroke="#00000069" />
+            <SVGPath fx:id="PC" content="M30.6,81.3H0.5V0.5h30.1V81.3z" fill="#00000069" layoutX="141.0" layoutY="398.0" scaleX="0.69" scaleY="0.69" stroke="#00000069" />
+            <SVGPath fx:id="ALUInput1" content="M4.2,3.8h42.2" layoutX="495.0" layoutY="435.0" scaleX="1.75" stroke="BLACK" />
+            <SVGPath fx:id="BranchAdderOutput" content="M4.2,3.8h42.2" layoutX="667.0" layoutY="155.0" scaleX="0.75" stroke="BLACK" />
+            <SVGPath fx:id="BranchMux1Output" content="M4.2,3.8h42.2" layoutX="712.0" layoutY="154.0" scaleX="0.65" stroke="BLACK" />
+            <SVGPath fx:id="BranchAdderInput2" content="M4.2,3.8h42.2" layoutX="583.0" layoutY="186.0" scaleX="1.25" stroke="BLACK" />
+            <SVGPath fx:id="BranchShifterInput" content="M0,555h69.4 M69.4,555v-61.7 M69.4,493.3l17.6-0.2 M69.4,493.3V1.5 M69.4,1.5h56.7" layoutX="439.0" layoutY="106.0" scaleX="0.69" scaleY="0.69" stroke="BLACK" />
+            <SVGPath fx:id="PCShifterInput" content="M0,610.2h56.7 M56.7,463.2V717 M55.7,463.2h111.2 M202.2,518.6H56.7 M202.2,556.6H56.7 M120.7,556.6v42.9 M146.1,598.5h-26.7 M166.8,463.2v-20 M56.7,717h181.3 M178.3,717v50.5 M362.3,767.5h-184 M362.3,767.5v-30.9 M399.3,738.6h-37.9 M56.7,717v70 M56.7,787h412.2 M468.8,787v-35 M468.8,752h16.4 M21.3,610.1M0,610.2h56.7 M56.7,463.2V717 M55.7,463.2h111.2 M202.2,518.6H56.7 M202.2,556.6H56.7 M120.7,556.6v42.9 M146.1,598.5h-26.7 M147.3,655.1l-90.7,0.3 M166.8,463.2v-20 M56.7,717h181.3 M178.3,717v50.5 M362.3,767.5h-184 M362.3,767.5v-30.9 M399.3,738.6h-37.9 M56.7,717v70 M56.7,787h412.2 M468.8,787v-35 M468.8,752h16.4 M21.3,610.1V1.5 M21.3,1.5H190V1.5 M21.3,1.5H190" layoutX="180.0" layoutY="-40.0" scaleX="0.69" scaleY="0.69" stroke="BLACK" />
+            <SVGPath fx:id="JR" content="M0.5,472V1 M765.8,386.8V472 M0.5,472h765.3 M22.4,0.5L0.5,1 M765.8,386.8h-23.7 M337.5,472V123.1 M337.5,123.1h186.3" layoutX="-74.0" layoutY="253.0" scaleX="0.69" scaleY="0.69" stroke="BLACK" />
+            <SVGPath fx:id="PCOutput" content="M20,3.8v474 M20.7,3.8h41.9 M38.4,478l-34.7-0M20,3.8v474 M20.7,3.8h41.9 M38.4,478l-34.7-0.5" layoutX="155.0" layoutY="46.0" scaleX="0.69" scaleY="0.69" stroke="BLACK" />
+            <SVGPath fx:id="ALUOutput" content="M251.5,157.1H21 M251.5,157.1V55.7 M265,55.7h-13.4 M0,0.5h42.7 M21.3,1.4v154.8" layoutX="574.0" layoutY="449.0" scaleX="0.69" scaleY="0.69" stroke="BLACK" />
+            <SVGPath fx:id="RegWriteData" content="M1172.6,914.5h-20.1 M1152.6,914.5v51.9 M1152.6,966.4H544.1 M544.1,966.4V827.2 M544.1,827.2h28.1 M572.3,827.2v-56.6 M572.3,770.6h16.6" layoutX="-276.0" layoutY="-276.0" scaleX="0.69" scaleY="0.69" stroke="BLACK" />
+            <SVGPath fx:id="MemMux1Output" content="M0,0.5h26.9 M26.9,0.5v166.8 M26.9,167.3H0" layoutX="810.0" layoutY="467.0" scaleX="0.69" scaleY="0.69" stroke="BLACK" />
+            <SVGPath fx:id="ALUZero" content="M0,302.8h15.1 M15.1,302.8V0.5 M15.1,37.5h17.3 M15.1,0.5h17.3" layoutX="610.0" layoutY="203.0" scaleX="0.69" scaleY="0.69" stroke="BLACK" />
+            <SVGPath fx:id="RegReadData2" content="M51.3,1H0 M21.7,0.5v66 M232.8,67H21.7" layoutX="447.0" layoutY="488.0" scaleX="0.69" scaleY="0.69" stroke="BLACK" />
+            <SVGPath fx:id="ALUControlOp" content="M0,99h11 M11,0v99" layoutX="558.0" layoutY="495.0" scaleX="0.69" scaleY="0.69" stroke="BLACK" />
+            <SVGPath fx:id="Shamt" content="M7.7,0v133.9 M0,133.9h7.7" layoutX="599.0" layoutY="469.5" scaleX="0.69" scaleY="0.69" stroke="BLACK" />
+            <SVGPath fx:id="MemReadData" content="M0,0.5h25" layoutX="720.0" layoutY="474.0" scaleX="0.69" scaleY="0.69" stroke="BLACK" />
+            <SVGPath fx:id="MemExtenderOutput" content="M0,0.5h25" layoutX="777.0" layoutY="474.0" scaleX="0.69" scaleY="0.69" stroke="BLACK" />
+            <SVGPath fx:id="RegWriteAndOutput" content="M653.1,600.1h6 M659.1,600.1v25.6" layoutX="-215.0" layoutY="-198.0" scaleX="0.69" scaleY="0.69" stroke="BLACK" />
+            <SVGPath fx:id="WriteReg" content="M0,0.5l31.5,0" layoutX="366.0" layoutY="502.0" scaleX="0.69" scaleY="0.69" stroke="BLACK" />
+            <SVGPath fx:id="ALUInput2" content="M34.6,1H0" layoutX="528.0" layoutY="500.0" scaleX="0.69" stroke="BLACK" />
+            <SVGPath fx:id="JAL31" content="M26.7,1.5H0" layoutX="333.0" layoutY="515.0" scaleX="0.69" stroke="BLACK" />
+            <SVGPath fx:id="Adder4" content="M26.7,1.5H0" layoutX="186.0" layoutY="174.0" scaleX="0.69" stroke="BLACK" />
+            <Label layoutX="388.0" layoutY="250.0" scaleX="0.69" scaleY="0.69" text="Jump" wrapText="true" />
+            <Label layoutX="392.0" layoutY="262.0" scaleX="0.69" scaleY="0.69" text="BNE" />
+            <Label layoutX="395.0" layoutY="273.0" scaleX="0.69" scaleY="0.69" text="BEQ" />
+            <Label layoutX="391.0" layoutY="284.0" scaleX="0.69" scaleY="0.69" text="MemToReg" />
+            <Label layoutX="393.0" layoutY="296.0" scaleX="0.69" scaleY="0.69" text="Unsigned" />
+            <Label layoutX="393.0" layoutY="312.0" scaleX="0.69" scaleY="0.69" text="MemData" />
+            <Label layoutX="392.0" layoutY="326.0" scaleX="0.69" scaleY="0.69" text="MemWrite" />
+            <Label layoutX="390.0" layoutY="338.0" prefHeight="24.0" prefWidth="38.0" scaleX="0.69" scaleY="0.69" text="ALUSrc" />
+            <Label layoutX="387.0" layoutY="354.0" scaleX="0.69" scaleY="0.69" text="ALUOp" />
+            <Label layoutX="379.0" layoutY="366.0" prefHeight="24.0" prefWidth="50.0" scaleX="0.69" scaleY="0.69" text="RegWrite" />
+            <Label layoutX="292.0" layoutY="334.0" prefHeight="24.0" prefWidth="54.0" scaleX="0.69" scaleY="0.69" text="MemRead" />
+            <Label layoutX="303.0" layoutY="346.0" prefHeight="24.0" prefWidth="38.0" scaleX="0.69" scaleY="0.69" text="RegDst" />
+            <Label layoutX="325.0" layoutY="360.0" prefHeight="24.0" prefWidth="26.0" scaleX="0.69" scaleY="0.69" text="LUI" />
+            <Label layoutX="341.0" layoutY="306.0" text="Controller">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="386.0" layoutY="428.0" prefHeight="24.0" prefWidth="72.0" scaleX="0.69" scaleY="0.69" text="ReadReg1">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="389.0" layoutY="460.0" scaleX="0.69" scaleY="0.69" text="ReadReg2">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="391.0" layoutY="494.0" scaleX="0.69" scaleY="0.69" text="WriteReg">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="389.0" layoutY="515.0" scaleX="0.69" scaleY="0.69" text="WriteData">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="435.0" layoutY="429.0" prefHeight="18.0" prefWidth="57.0" scaleX="0.69" scaleY="0.69" text="ReadData1">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+            </Label>
+            <Label layoutX="429.0" layoutY="491.0" scaleX="0.69" scaleY="0.69" text="ReadData2">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="415.0" layoutY="554.0" prefHeight="43.0" prefWidth="46.0" scaleX="0.69" scaleY="0.8" text="Extender">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+            </Label>
+            <Label layoutX="736.0" layoutY="451.0" prefHeight="43.0" prefWidth="46.0" scaleX="0.69" scaleY="0.8" text="Extender">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+            </Label>
+            <Label layoutX="519.0" layoutY="557.0" prefHeight="43.0" prefWidth="50.0" scaleX="0.55" scaleY="0.69" text="ALU Control" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="170.0" layoutY="504.0" prefHeight="47.0" prefWidth="118.0" scaleX="0.69" scaleY="0.69" text="Instruction Memory" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="206.0" layoutY="488.0" prefHeight="35.0" prefWidth="62.0" scaleX="0.69" scaleY="0.69" text="Instruction [31-0]" textAlignment="RIGHT" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="642.0" layoutY="463.0" scaleX="0.69" scaleY="0.69" text="Address">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font></Label>
+            <Label layoutX="690.0" layoutY="458.0" prefHeight="43.0" prefWidth="37.0" scaleX="0.69" scaleY="0.69" text="Read Data" textAlignment="JUSTIFY" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font></Label>
+            <Label layoutX="642.0" layoutY="530.0" scaleX="0.69" scaleY="0.69" text="WriteData">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font></Label>
+            <Label layoutX="581.0" layoutY="450.0" scaleX="0.69" scaleY="0.69" text="Zero">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="577.0" layoutY="465.0" scaleX="0.69" scaleY="0.69" text="Result">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="391.0" layoutY="41.0" prefHeight="82.0" prefWidth="30.0" scaleX="0.69" scaleY="0.69" text="Shift Left 2" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="548.0" layoutY="168.0" prefHeight="62.0" prefWidth="33.0" scaleX="0.69" scaleY="0.69" text="Shift Left 2" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="58.0" layoutY="318.0" prefHeight="18.0" prefWidth="54.0" scaleX="0.69" scaleY="0.69" text="1 M U X 0">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+            </Label>
+            <Label layoutX="709.0" layoutY="93.0" prefHeight="92.0" prefWidth="12.0" scaleX="0.69" scaleY="0.5" text="0 M U X 1 " textAlignment="CENTER" wrapText="true" />
+            <Label layoutX="752.0" layoutY="88.0" prefHeight="102.0" prefWidth="12.0" scaleX="0.69" scaleY="0.5" text="1 M U X 0" textAlignment="CENTER" wrapText="true" />
+            <Label layoutX="801.0" layoutY="443.0" prefHeight="102.0" prefWidth="12.0" scaleX="0.69" scaleY="0.5" text="1 M U X 0" textAlignment="CENTER" wrapText="true" />
+            <Label layoutX="801.0" layoutY="580.0" prefHeight="92.0" prefWidth="12.0" scaleX="0.69" scaleY="0.5" text="0 M U X 1 " textAlignment="CENTER" wrapText="true" />
+            <Label layoutX="519.0" layoutY="471.0" prefHeight="92.0" prefWidth="12.0" scaleX="0.69" scaleY="0.5" text="0 M U X 1 " textAlignment="CENTER" wrapText="true" />
+            <Label layoutX="590.0" layoutY="533.0" prefHeight="102.0" prefWidth="12.0" scaleX="0.5" scaleY="0.4" text="1 M U X 0" textAlignment="CENTER" wrapText="true" />
+            <SVGPath fx:id="Mux16" content="M0,0.5h25" layoutX="571.0" layoutY="571.0" scaleX="0.4" stroke="BLACK" />
+            <Label layoutX="357.0" layoutY="469.0" prefHeight="92.0" prefWidth="12.0" scaleX="0.69" scaleY="0.5" text="0 M U X 2 " textAlignment="CENTER" wrapText="true" />
+            <Label layoutX="149.0" layoutY="434.0" text="PC">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="184.0" layoutY="167.0" text="4" />
+            <Label layoutX="315.0" layoutY="508.0" text="31" />
+            <Label layoutX="567.0" layoutY="563.0" text="16" />
+            <SVGPath content="M49.5,7.5c2.1,0,3.8-1.7,3.8-3.8S51.6,0,49.5,0c-2.1,0-3.8,1.7-3.8,3.8S47.5,7.5,49.5,7.5z" layoutX="354.0" layoutY="406.0" scaleX="0.69" scaleY="0.69" />
+            <SVGPath content="M49.5,7.5c2.1,0,3.8-1.7,3.8-3.8S51.6,0,49.5,0c-2.1,0-3.8,1.7-3.8,3.8S47.5,7.5,49.5,7.5z" layoutX="584.0" layoutY="246.0" scaleX="0.69" scaleY="0.69" />
+            <Label fx:id="MemDataString" layoutX="434.0" layoutY="311.0" prefHeight="18.0" prefWidth="50.0" scaleX="0.69" scaleY="0.69" text="Label" />
+            <Label fx:id="ALUOpString" layoutX="428.0" layoutY="353.0" prefHeight="18.0" prefWidth="50.0" scaleX="0.69" scaleY="0.69" text="Label" />
+            <Label fx:id="RegDstString" layoutX="275.0" layoutY="349.0" prefHeight="18.0" prefWidth="50.0" scaleX="0.69" scaleY="0.69" text="Label" />
+            <Label fx:id="InstructionRs" layoutX="290.0" layoutY="425.0" prefHeight="18.0" prefWidth="50.0" scaleX="0.69" scaleY="0.69" text="Label" />
+            <Label fx:id="InstructionRt" layoutX="292.0" layoutY="518.0" prefHeight="18.0" prefWidth="50.0" scaleX="0.69" scaleY="0.69" text="Label" />
+            <Label fx:id="InstructionRd" layoutX="292.0" layoutY="533.0" prefHeight="18.0" prefWidth="50.0" scaleX="0.69" scaleY="0.69" text="Label" />
+            <Label fx:id="InstructionConst" layoutX="290.0" layoutY="556.0" prefHeight="18.0" prefWidth="50.0" scaleX="0.69" scaleY="0.69" text="Label" />
+            <Label fx:id="InstructionShamt" layoutX="290.0" layoutY="611.0" prefHeight="18.0" prefWidth="50.0" scaleX="0.69" scaleY="0.69" text="Label" />
+            <Label fx:id="InstructionOp" layoutX="292.0" layoutY="386.0" prefHeight="18.0" prefWidth="50.0" scaleX="0.69" scaleY="0.69" text="Label" />
+            <Label fx:id="PCInputString" layoutX="89.0" layoutY="425.0" prefHeight="18.0" prefWidth="50.0" scaleX="0.69" scaleY="0.69" text="Label" />
+            <Label fx:id="PCOutputString" layoutX="139.0" layoutY="302.0" prefHeight="18.0" prefWidth="50.0" rotate="-90.0" text="Label" />
+            <Label fx:id="PCMuxIn1" layoutX="31.0" layoutY="262.0" prefHeight="18.0" prefWidth="50.0" rotate="-90.0" text="Label" />
+            <Label fx:id="PCMuxIn0" layoutX="60.0" layoutY="262.0" prefHeight="18.0" prefWidth="50.0" rotate="-90.0" text="Label" />
+            <Label fx:id="InstructionShift" layoutX="316.0" layoutY="63.0" prefHeight="18.0" prefWidth="50.0" text="Label" />
+            <Label fx:id="JumpAddress" layoutX="438.0" layoutY="63.0" prefHeight="18.0" prefWidth="50.0" text="Label" />
+            <Label fx:id="PCAdderOut" layoutX="367.0" layoutY="123.0" prefHeight="18.0" prefWidth="50.0" text="Label" />
+            <Label fx:id="BranchAdderOut" layoutX="680.0" layoutY="140.0" prefHeight="18.0" prefWidth="35.0" text="Label" />
+            <Label fx:id="BranchMux1Out" layoutX="724.0" layoutY="140.0" prefHeight="18.0" prefWidth="35.0" text="Label" />
+            <Label fx:id="BranchShifterIn" layoutX="511.0" layoutY="179.0" prefHeight="18.0" prefWidth="35.0" text="Label" />
+            <Label fx:id="BranchShifterOut" layoutX="590.0" layoutY="175.0" prefHeight="18.0" prefWidth="35.0" text="Label" />
+            <Label fx:id="ALUControllerOut" layoutX="542.0" layoutY="515.0" prefHeight="18.0" prefWidth="35.0" rotate="-90.0" text="Label" />
+            <Label fx:id="ShamtString" layoutX="581.0" layoutY="513.0" prefHeight="18.0" prefWidth="35.0" rotate="-90.0" text="Label" />
+            <Label fx:id="ALUResult" layoutX="615.0" layoutY="457.0" prefHeight="16.0" prefWidth="40.0" text="Label" />
+            <Label fx:id="ALUIn1" layoutX="526.0" layoutY="419.0" prefHeight="16.0" prefWidth="40.0" text="Label" />
+            <Label fx:id="ALUIn2" layoutX="532.0" layoutY="484.0" prefHeight="18.0" prefWidth="50.0" text="Label" />
+            <Label fx:id="ExtenderOut" layoutX="457.0" layoutY="561.0" text="Label" />
+            <Label fx:id="ExtenderMemOut" layoutX="776.0" layoutY="456.0" scaleX="0.8" scaleY="0.8" text="Label" />
+            <Label fx:id="ReadDataReg1" layoutX="449.0" layoutY="444.0" text="Label" />
+            <Label fx:id="ReadDataReg2" layoutX="450.0" layoutY="506.0" text="Label" />
+            <Label fx:id="WriteDataReg" layoutX="400.0" layoutY="525.0" text="Label" />
+            <Label fx:id="WriteDataMem" layoutX="662.0" layoutY="542.0" text="Label" />
+            <Label fx:id="ReadDataMem" layoutX="695.0" layoutY="493.0" text="Label" />
+            <Label fx:id="MemMux1Out" layoutX="819.0" layoutY="474.0" text="Label" />
+            <Label fx:id="PCAdderOutt" layoutX="819.0" layoutY="617.0" text="Label" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
