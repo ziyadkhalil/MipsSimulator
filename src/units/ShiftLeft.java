@@ -11,7 +11,7 @@ public class ShiftLeft {
     private void shift(){
         output=input+"00";
         if(output.length()>=32)
-            output=input.substring(2);
+            output=output.substring(2);
     }
 
     public String getOutput(){

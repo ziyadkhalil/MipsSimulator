@@ -20,6 +20,7 @@ public class Extender {
     }
 
     private void extend() {
+        output=input;
         if (input.length() == 8) {
             if (Unsigned||input.charAt(0)=='0')
                 output = "000000000000000000000000" + input;
@@ -33,6 +34,7 @@ public class Extender {
         }
     }
     private void extendSigned() {
+        output=input;
         if (input.length() == 8) {
             if (input.charAt(0)=='0')
                 output = "000000000000000000000000" + input;

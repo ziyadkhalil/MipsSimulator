@@ -19,7 +19,10 @@ public class Register {
     public Register(String name) {
         this.name=name;
         this.code= Integer.toBinaryString(REGISTER_NAME.indexOf(name));
-        this.value.setValue("00000000000000000000000000000000");
+        if (name.equals("$sp"))
+            this.setValue("00000000000000000010011100010100");
+        else
+            this.value.setValue("00000000000000000000000000000000");
     }
 
     public void setValue(String value) {
