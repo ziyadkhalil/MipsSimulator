@@ -9,7 +9,7 @@ public class Assembler {
     private int instructionIndex=0;
 
     private ArrayList<InstructionLine> instructions = new ArrayList<>();
-    private String path = "programs\\input.txt";
+    private String path = "programs\\input.text";
     private ArrayList<String> tempInstructions = new ArrayList<>();
     private Map<String , String>  labels = new HashMap<>();
 
@@ -40,7 +40,7 @@ public class Assembler {
         for (int j = 0; j< tempInstructions.size(); j++) {
             if (tempInstructions.get(j).contains(":"))
             {
-                while(tempInstructions.get(j).split(":").length==1) {   //handles empty lines with labels
+                while(tempInstructions.get(j).split(":").length==1&&j!=tempInstructions.size()-1) {   //handles empty lines with labels
                     tempInstructions.set(j+1,(tempInstructions.get(j).split(":"))[0]+":"+tempInstructions.get(j+1));
                     tempInstructions.remove(j);
                     System.out.println(tempInstructions.get(j));
@@ -51,6 +51,7 @@ public class Assembler {
                 System.out.println(tempInstructions.get(j).substring(0,i).trim());
                 labels.put(tempInstructions.get(j).substring(0,i).trim(),index);
                 tempInstructions.set(j, tempInstructions.get(j).substring(i+1, tempInstructions.get(j).length()).trim());
+                if (tempInstructions.get(j).isEmpty()) tempInstructions.remove(j);
                 //TODO: EXCEPTION HANDLING IF A LABEL IS ALREADY DEFINED
             }
         }

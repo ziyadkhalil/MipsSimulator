@@ -1,1 +1,20 @@
-addi $t1 , $zero ,-8
+main:addi $t0 , $zero , 13
+jal factorial
+j end
+factorial:  beq $t0, $zero, returnOne
+addi    $t0, $t0, -1      # subtract 1 from $t0 if not equal to 0
+addi    $sp, $sp, -12     # move stack pointer up 3 words
+sw      $t0, 0($sp)       # store current working number into the top of the stack segment
+sw      $ra, 8($sp)       # store counter at bottom of stack segment
+jal     factorial         # recursive call
+lw      $ra, 8($sp)       # load this call's $ra again(we just got back from a jump)
+lw      $t1, 4($sp)       # load child's return value into $t1
+lw      $t2, 12($sp)      # load parent's start value into $t2
+mul     $t3, $t1, $t2     # multiply child's return value by parent's working value, store in $t3.
+sw      $t3, 16($sp)      # take result(in $t3), store in parent's return value.
+addi    $sp, $sp, 12      # move stackpointer back down for the parent call
+jr      $ra               # jump to parent call
+returnOne:addi      $t0,$zero, 1            # load 1 into register $t0
+sw      $t0, 4($sp)       # store 1 into the parent's return value register
+jr      $ra               # jump to parent call
+end:
