@@ -7,43 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="02c8cb52-8400-4d70-a6a1-01c38c533281" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/../MipsSimulator/.idea/misc.xml" afterPath="$PROJECT_DIR$/../MipsSimulator/.idea/misc.xml" />
+      <change beforePath="$PROJECT_DIR$/../MipsSimulator/.idea/vcs.xml" afterPath="$PROJECT_DIR$/../MipsSimulator/.idea/vcs.xml" />
       <change beforePath="$PROJECT_DIR$/../MipsSimulator/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../MipsSimulator/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/../MipsSimulator/CircuitDiagram.ai" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../MipsSimulator/ControlUnitDiagram.ai" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../MipsSimulator/MipsSimulator.iml" afterPath="$PROJECT_DIR$/../MipsSimulator/MipsSimulator.iml" />
-      <change beforePath="$PROJECT_DIR$/../MipsSimulator/_windows/git.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../MipsSimulator/_windows/laf.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../MipsSimulator/_windows/path.macros.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../MipsSimulator/codestyles/Default.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../MipsSimulator/colors.scheme.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../MipsSimulator/consoleFolding.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../MipsSimulator/databaseSettings.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../MipsSimulator/debugger.renderers.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../MipsSimulator/debugger.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../MipsSimulator/editor.codeinsight.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../MipsSimulator/editor.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../MipsSimulator/filetypes.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../MipsSimulator/github_settings.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../MipsSimulator/ide.general.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../MipsSimulator/ignore.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../MipsSimulator/programs/input.text" afterPath="$PROJECT_DIR$/../MipsSimulator/programs/input.text" />
-      <change beforePath="$PROJECT_DIR$/../MipsSimulator/programs/input.txt" afterPath="$PROJECT_DIR$/../MipsSimulator/programs/input.txt" />
-      <change beforePath="$PROJECT_DIR$/../MipsSimulator/projectView.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../MipsSimulator/src/Circuit.fxml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../MipsSimulator/src/Main.java" afterPath="$PROJECT_DIR$/../MipsSimulator/src/Main.java" />
-      <change beforePath="$PROJECT_DIR$/../MipsSimulator/src/assembler/Assembler.java" afterPath="$PROJECT_DIR$/../MipsSimulator/src/assembler/Assembler.java" />
-      <change beforePath="$PROJECT_DIR$/../MipsSimulator/src/assembler/instsruction/Instruction.java" afterPath="$PROJECT_DIR$/../MipsSimulator/src/assembler/instsruction/Instruction.java" />
-      <change beforePath="$PROJECT_DIR$/../MipsSimulator/src/board/Processor.java" afterPath="$PROJECT_DIR$/../MipsSimulator/src/board/Processor.java" />
-      <change beforePath="$PROJECT_DIR$/../MipsSimulator/src/units/Controller.java" afterPath="$PROJECT_DIR$/../MipsSimulator/src/units/Controller.java" />
-      <change beforePath="$PROJECT_DIR$/../MipsSimulator/src/units/DataMemory.java" afterPath="$PROJECT_DIR$/../MipsSimulator/src/units/DataMemory.java" />
-      <change beforePath="$PROJECT_DIR$/../MipsSimulator/src/units/Extender.java" afterPath="$PROJECT_DIR$/../MipsSimulator/src/units/Extender.java" />
-      <change beforePath="$PROJECT_DIR$/../MipsSimulator/src/units/Register.java" afterPath="$PROJECT_DIR$/../MipsSimulator/src/units/Register.java" />
-      <change beforePath="$PROJECT_DIR$/../MipsSimulator/src/units/ShiftLeft.java" afterPath="$PROJECT_DIR$/../MipsSimulator/src/units/ShiftLeft.java" />
-      <change beforePath="$PROJECT_DIR$/../MipsSimulator/usageView.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../MipsSimulator/vcs.xml" afterPath="" />
     </list>
-    <ignored path="$PROJECT_DIR$/..//////////////////MipsSimulatorV0/out/" />
+    <ignored path="$PROJECT_DIR$/..///////////////////MipsSimulatorV0/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -68,8 +35,18 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../MipsSimulator/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+            <state relative-caret-position="367">
+              <caret line="49" column="35" lean-forward="true" selection-start-line="49" selection-start-column="35" selection-end-line="49" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../MipsSimulator/.idea/workspace.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="252">
+              <caret line="12" column="47" lean-forward="true" selection-start-line="12" selection-start-column="47" selection-end-line="12" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -78,7 +55,7 @@
       <file leaf-file-name="application.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../MipsSimulator/src/application.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="21">
+            <state relative-caret-position="42">
               <caret line="2" column="31" lean-forward="false" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="31" />
               <folding />
             </state>
@@ -88,7 +65,7 @@
       <file leaf-file-name="Processor.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../MipsSimulator/src/board/Processor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="817">
+            <state relative-caret-position="3507">
               <caret line="179" column="0" lean-forward="false" selection-start-line="179" selection-start-column="0" selection-end-line="179" selection-end-column="0" />
               <folding>
                 <element signature="method#methodRa23a#0;class#Processor#0" expanded="false" />
@@ -113,10 +90,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MainController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../MipsSimulator/src/board/MainController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
+            <state relative-caret-position="168">
               <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -255,8 +232,8 @@
         <option value="$PROJECT_DIR$/src/application.css" />
         <option value="$PROJECT_DIR$/src/board/Processor.java" />
         <option value="$PROJECT_DIR$/src/scenes/Circuit.fxml" />
-        <option value="$PROJECT_DIR$/../MipsSimulator/src/scenes/Circuit.fxml" />
-        <option value="$PROJECT_DIR$/../MipsSimulator/src/scenes/mainScene.fxml" />
+        <option value="$PROJECT_DIR$/src/scenes/Circuit.fxml" />
+        <option value="$PROJECT_DIR$/src/scenes/mainScene.fxml" />
       </list>
     </option>
   </component>
@@ -293,6 +270,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -303,19 +284,12 @@
             <path>
               <item name="MipsSimulator" type="b2602c69:ProjectViewProjectNode" />
               <item name="MipsSimulator" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name=".idea" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MipsSimulator" type="b2602c69:ProjectViewProjectNode" />
               <item name="MipsSimulator" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="board" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MipsSimulator" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MipsSimulator" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="scenes" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MipsSimulator" type="b2602c69:ProjectViewProjectNode" />
@@ -325,10 +299,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -338,7 +308,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../MipsSimulator/libraries/MipsCodeArea.jar!/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/libraries/MipsCodeArea.jar!/" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
@@ -508,7 +478,8 @@
       <workItem from="1524580347889" duration="2970000" />
       <workItem from="1524758637016" duration="51201000" />
       <workItem from="1524957954291" duration="29907000" />
-      <workItem from="1525174623044" duration="1010000" />
+      <workItem from="1525174623044" duration="2978000" />
+      <workItem from="1525179682297" duration="3987000" />
     </task>
     <task id="LOCAL-00001" summary="#0&#10;units package created to include units&#10;board package created to include the circuit">
       <created>1522402405806</created>
@@ -643,25 +614,39 @@
       <option name="project" value="LOCAL" />
       <updated>1525175573103</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Merge branch 'master' of https://github.com/ZiyadKhalil/MipsSimulator&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+      <created>1525175676133</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1525175676133</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Merge branch 'master' of https://github.com/ZiyadKhalil/MipsSimulator&#10;&#10;# Conflicts:&#10;#&#9;vcs.xml">
+      <created>1525175796976</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1525175796976</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="284650000" />
+    <option name="totallyTimeSpent" value="290605000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1060" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32845894" sideWeight="0.4613319" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32824427" sideWeight="0.45729166" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.49291167" sideWeight="0.55572915" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.49291167" sideWeight="0.5619792" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32975295" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.49291167" sideWeight="0.44427082" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26096737" sideWeight="0.44038668" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.49291167" sideWeight="0.43802083" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2606325" sideWeight="0.43854168" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -748,15 +733,15 @@
   </component>
   <component name="VcsManagerConfiguration">
     <ignored-roots>
-      <path value="$PROJECT_DIR$/../////////////MipsSimulatorV0" />
-      <path value="$PROJECT_DIR$" />
+      <path value="$PROJECT_DIR$/..//////////////MipsSimulatorV0" />
     </ignored-roots>
     <MESSAGE value="#0&#10;units package created to include units&#10;board package created to include the circuit" />
     <MESSAGE value="Merge branch 'notMaster' of https://github.com/ZiyadKhalil/MipsSimulator&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
     <MESSAGE value="Merge branch 'notMaster' of https://github.com/ZiyadKhalil/MipsSimulator&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/memory/MemElement.java" />
     <MESSAGE value="Merge branch 'master' of https://github.com/ZiyadKhalil/MipsSimulator&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;programs/input.text&#10;#&#9;src/Main.java" />
     <MESSAGE value="Merge branch 'master' of https://github.com/ZiyadKhalil/MipsSimulator&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'master' of https://github.com/ZiyadKhalil/MipsSimulator&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
+    <MESSAGE value="Merge branch 'master' of https://github.com/ZiyadKhalil/MipsSimulator&#10;&#10;# Conflicts:&#10;#&#9;vcs.xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'master' of https://github.com/ZiyadKhalil/MipsSimulator&#10;&#10;# Conflicts:&#10;#&#9;vcs.xml" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -925,9 +910,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="177">
           <caret line="65" column="0" lean-forward="false" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
-          <folding>
-            <element signature="e#1467#1468#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -949,7 +931,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="199">
           <caret line="75" column="23" lean-forward="false" selection-start-line="75" selection-start-column="23" selection-end-line="75" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -992,7 +973,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="13" column="25" lean-forward="false" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1000,7 +980,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
           <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1008,15 +987,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="11" column="121" lean-forward="false" selection-start-line="11" selection-start-column="121" selection-end-line="11" selection-end-column="121" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../MipsSimulator/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1046,7 +1016,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="109">
           <caret line="22" column="57" lean-forward="false" selection-start-line="22" selection-start-column="57" selection-end-line="22" selection-end-column="57" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1054,7 +1023,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="129">
           <caret line="36" column="21" lean-forward="false" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1062,7 +1030,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-41">
           <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1070,10 +1037,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
           <caret line="27" column="50" lean-forward="false" selection-start-line="27" selection-start-column="50" selection-end-line="27" selection-end-column="50" />
-          <folding>
-            <element signature="method#setDataToWrite#0;class#DataMemory#0" expanded="false" />
-            <element signature="method#injectFlags#0;class#DataMemory#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1081,7 +1044,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="197">
           <caret line="80" column="83" lean-forward="true" selection-start-line="80" selection-start-column="83" selection-end-line="80" selection-end-column="83" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1089,10 +1051,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="197">
           <caret line="63" column="37" lean-forward="false" selection-start-line="63" selection-start-column="37" selection-end-line="63" selection-end-column="37" />
-          <folding>
-            <element signature="e#3009#3010#0" expanded="false" />
-            <element signature="e#3044#3045#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1100,7 +1058,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="124">
           <caret line="21" column="33" lean-forward="false" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1108,7 +1065,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1128,7 +1084,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1861">
           <caret line="215" column="31" lean-forward="false" selection-start-line="215" selection-start-column="31" selection-end-line="215" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1136,7 +1091,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="14" lean-forward="false" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1148,63 +1102,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../MipsSimulator/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../MipsSimulator/colors.scheme.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../MipsSimulator/databaseSettings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../MipsSimulator/src/Circuit.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="15" column="18" lean-forward="true" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../MipsSimulator/src/board/board.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../MipsSimulator/src/board/Processor.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="243" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="243" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../MipsSimulator/colors.scheme.xml" />
+    <entry file="file://$PROJECT_DIR$/../MipsSimulator/databaseSettings.xml" />
+    <entry file="file://$PROJECT_DIR$/../MipsSimulator/src/Circuit.fxml" />
+    <entry file="file://$PROJECT_DIR$/../MipsSimulator/src/board/board.fxml" />
+    <entry file="file://$PROJECT_DIR$/../MipsSimulator/src/board/Processor.fxml" />
     <entry file="file://$PROJECT_DIR$/../MipsSimulator/src/scenes/mainScene.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1231,7 +1133,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../MipsSimulator/src/application.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
+        <state relative-caret-position="42">
           <caret line="2" column="31" lean-forward="false" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="31" />
           <folding />
         </state>
@@ -1239,7 +1141,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../MipsSimulator/src/board/Processor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="817">
+        <state relative-caret-position="3507">
           <caret line="179" column="0" lean-forward="false" selection-start-line="179" selection-start-column="0" selection-end-line="179" selection-end-column="0" />
           <folding>
             <element signature="method#methodRa23a#0;class#Processor#0" expanded="false" />
@@ -1255,11 +1157,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../MipsSimulator/src/board/MainController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
+        <state relative-caret-position="168">
           <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../MipsSimulator/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="367">
+          <caret line="49" column="35" lean-forward="true" selection-start-line="49" selection-start-column="35" selection-end-line="49" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../MipsSimulator/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="12" column="47" lean-forward="true" selection-start-line="12" selection-start-column="47" selection-end-line="12" selection-end-column="47" />
+          <folding />
         </state>
       </provider>
     </entry>
