@@ -25,6 +25,7 @@ public class DataMemory {
         offset = temp%4;
         temp-=offset;
         String x = Integer.toString(temp,2);
+        System.out.println(temp  + "       " + x);
         this.address = x;
 
     }

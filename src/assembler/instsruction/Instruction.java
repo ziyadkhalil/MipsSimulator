@@ -10,9 +10,9 @@ import static assembler.InstructionFormat.J_FORMAT;
 import static assembler.InstructionFormat.R_FORMAT;
 
 public abstract class Instruction {
-    static final ArrayList<String> R_INSTRUCTIONS = new ArrayList<>(Arrays.asList("add","sub","mul","nor","or","and","slt","sltu","sll","srl"));
+    static final ArrayList<String> R_INSTRUCTIONS = new ArrayList<>(Arrays.asList("add","sub","mul","nor","or","and","slt","sltu","sll","srl","jr"));
     static final ArrayList<String> I_INSTRUCTION = new ArrayList<>(Arrays.asList("beq","lw","sw","lb","lbu","sb","lh","sh","addi","slti","sltiu","bne","andi","ori","lui","lhu"));
-    static final ArrayList<String> J_INSTRUCTION = new ArrayList<>(Arrays.asList("j","jal","jr"));
+    static final ArrayList<String> J_INSTRUCTION = new ArrayList<>(Arrays.asList("j","jal"));
     private InstructionFormat format;
     private String name;
     public Instruction(String name) {
