@@ -8,7 +8,7 @@ import static assembler.instsruction.FormatType.*;
 
 public class RInstruction extends Instruction {
     private ArrayList<String> R_INSTRUCTION_ARITHMETIC_TYPE = new ArrayList<>(Arrays.asList("add","sub","nor","or","slt","and","sltu","mul"));
-    private ArrayList<String> R_INSTRUCTION_ARITHMETIC_OP_CODE = new ArrayList<>(Arrays.asList("100000","100010","100111","100101","101010","100100","101011"));
+    private ArrayList<String> R_INSTRUCTION_ARITHMETIC_OP_CODE = new ArrayList<>(Arrays.asList("100000","100010","100111","100101","101010","100100","101011","011000"));
 
     private ArrayList<String> R_INSTRUCTION_SHIFTING_TYPE = new ArrayList<>(Arrays.asList("sll","srl"));
     private ArrayList<String> R_INSTRUCTION_SHIFTING_OP_CODE = new ArrayList<>(Arrays.asList("000000","000010"));

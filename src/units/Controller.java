@@ -74,7 +74,7 @@ public class Controller  {
         memData[1] = sb || lb || lbu;
         memData[0] = sh || lh || lhu;
         branch = beq || bne;
-        jump = j;
+        jump = j || jal;
         unsigned = lhu || lbu;
         aluOp[2] = lui || ori || andi || sltiu;
         aluOp[1] = r_format || slti || sltiu || ori;
