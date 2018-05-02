@@ -499,7 +499,7 @@
       <workItem from="1524758637016" duration="51201000" />
       <workItem from="1524957954291" duration="29907000" />
       <workItem from="1525174623044" duration="2978000" />
-      <workItem from="1525179682297" duration="4078000" />
+      <workItem from="1525179682297" duration="4160000" />
     </task>
     <task id="LOCAL-00001" summary="#0&#10;units package created to include units&#10;board package created to include the circuit">
       <created>1522402405806</created>
@@ -655,11 +655,18 @@
       <option name="project" value="LOCAL" />
       <updated>1525221061736</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Merge branch 'master' of https://github.com/ZiyadKhalil/MipsSimulator&#10;&#10;# Conflicts:&#10;#&#9;vcs.xml">
+      <created>1525221154982</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1525221154982</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="290696000" />
+    <option name="totallyTimeSpent" value="290778000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1060" extended-state="6" />
