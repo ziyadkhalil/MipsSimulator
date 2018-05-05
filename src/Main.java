@@ -34,7 +34,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         primaryStage.setTitle("Oh Hai User");
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/scenes/mainScene.FXML"));
+         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/scenes/mainScene.FXML"));
         Pane root = fxmlLoader.load();
 
         Scene scene = new Scene(root);
