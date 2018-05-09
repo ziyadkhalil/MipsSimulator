@@ -77,7 +77,10 @@
     </filter>
   </component>
   <component name="XDebuggerSettings">
-    <data-views />
+    <data-views>
+      <option name="showValuesInline" value="false" />
+      <show-values-inline>false</show-values-inline>
+    </data-views>
     <general />
     <debuggers>
       <debugger id="javascript">
