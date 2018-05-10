@@ -1,5 +1,8 @@
 package units;
 
+
+import javafx.scene.control.TableView;
+
 public class ALUController {
     boolean[] ALUOp=new boolean[3];
     boolean[] Fn = new boolean[6];

@@ -18,8 +18,10 @@ public class InstructionLine {
     private int constant;                    //case: I/J format
     private String code;
     private String index;
+    private String line;
 
     public InstructionLine(String line,String index) {
+        this.line=line;
         this.index=index;
         instruction=Instruction.createInstruction(line.substring(0,line.indexOf(" ")));
         line=line.substring(line.indexOf(" ")+1).trim();
@@ -165,5 +167,9 @@ public class InstructionLine {
         return constant;
     }
 
+    @Override
+    public String toString() {
+        return index+": "+line;
+    }
 }
 

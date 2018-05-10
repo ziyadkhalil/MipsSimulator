@@ -72,6 +72,11 @@ public class MipsUtils {
         }
         return s;
     }
+    public static String fromBooleantoString (boolean b){
+        if(b)
+            return "1";
+        return "0";
+    }
 
     public static long stringToLong(String s){
         if(s.charAt(0)=='0')

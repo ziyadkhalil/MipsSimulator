@@ -52,7 +52,6 @@ public class MainController implements Initializable {
             e.printStackTrace();
         }
         instructionMemory = new InstructionMemory();
-        t=new Thread(CircuitController);
     instructionMemory.setInstructions(assembler.getInstructions());
     instructionMemory.setInitialLocation(assembler.getInitialLocation());
     CircuitController.injectInstructionMemory(instructionMemory);
@@ -64,14 +63,14 @@ public class MainController implements Initializable {
     debugButton.setOnAction(new EventHandler<ActionEvent>() {
         @Override
         public void handle(ActionEvent event) {
-            CircuitController.setButtonPressed(true);
         }
     });
 
     runButton.setOnAction(new EventHandler<ActionEvent>() {
         @Override
         public void handle(ActionEvent event) {
-        t.run();
+        CircuitController.process();
+        populateRegistersTable();
         }
     });
 

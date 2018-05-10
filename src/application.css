@@ -984,3 +984,16 @@ VBox > .split-menu-button.last > .arrow-button {
     -fx-fill: #da7900;
 }
 
+#onWire {
+    -fx-stroke: #61ebff;
+    -fx-stroke-width: 2;
+}
+#offWire {
+    -fx-stroke: #800200;
+    -fx-stroke-width: 2;
+}
+#units{
+    -fx-fill: #bababa;
+    -fx-stroke: #000000;
+    -fx-stroke-width: 1.4;
+}
