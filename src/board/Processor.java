@@ -1,28 +1,37 @@
 package board;
 
 import assembler.Assembler;
-import assembler.InstructionLine;
 import javafx.beans.property.*;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.shape.SVGPath;
 import units.*;
 import utils.MipsUtils;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
+import java.net.URL;
+import java.util.*;
+import java.util.function.BiConsumer;
+import java.util.function.Consumer;
 
-public class Processor {
-    private ArrayList<SVGPath> StringPaths;
-    private ArrayList<SVGPath> UnitsPaths;
+
+public class Processor implements Initializable{
+    private static final String ZERO_ERROR = "CANNOT WRITE IN REGISTER ZERO!" ;
+    private ArrayList<SVGPath> stringPaths;
+    private ArrayList<SVGPath> unitsPaths;
     private Map<SVGPath,BooleanProperty> booleanWires=new HashMap<>();
-    private Map<Label,StringProperty> StringWires=new HashMap<>();
+    private Map<Label,StringProperty> stringWires =new HashMap<>();
+    private ObservableList<Wire> wires = FXCollections.observableArrayList();
+
 
 
     //Units SVGPaths
-
     @FXML
     SVGPath BranchAdderPath;
     @FXML
@@ -71,6 +80,8 @@ public class Processor {
     SVGPath PCMuxPath;
     @FXML
     SVGPath PCPath;
+    @FXML
+    SVGPath DataMemPath;
 
 
     //StringPaths
@@ -138,52 +149,52 @@ public class Processor {
     //BooleanWires and their SVGPaths
     @FXML
     SVGPath JumpPath;
-    private BooleanProperty JumpWire = new SimpleBooleanProperty();
+    private BooleanProperty JumpWire = new SimpleBooleanProperty(true,"Jump");
     @FXML
     SVGPath BNEPath;
-    private BooleanProperty BNEWire = new SimpleBooleanProperty();
+    private BooleanProperty BNEWire = new SimpleBooleanProperty(true,"BNE");
     @FXML
     SVGPath BEQPath;
-    private BooleanProperty BEQWire = new SimpleBooleanProperty();
+    private BooleanProperty BEQWire = new SimpleBooleanProperty(true,"BEQ");
     @FXML
     SVGPath MemToRegPath;
-    private BooleanProperty MemToRegWire = new SimpleBooleanProperty();
+    private BooleanProperty MemToRegWire = new SimpleBooleanProperty(true,"MemToReg");
     @FXML
     SVGPath MemWritePath;
-    private BooleanProperty MemWriteWire = new SimpleBooleanProperty();
+    private BooleanProperty MemWriteWire = new SimpleBooleanProperty(true,"MemWrite");
     @FXML
     SVGPath ALUSrcPath;
-    private BooleanProperty ALUSrcWire = new SimpleBooleanProperty();
+    private BooleanProperty ALUSrcWire = new SimpleBooleanProperty(true,"ALUSrc");
     @FXML
     SVGPath UnsignedPath;
-    private BooleanProperty UnsignedWire = new SimpleBooleanProperty();
+    private BooleanProperty UnsignedWire = new SimpleBooleanProperty(true,"Unsigned");
     @FXML
     SVGPath LUIPath;
-    private BooleanProperty LUIWire = new SimpleBooleanProperty();
+    private BooleanProperty LUIWire = new SimpleBooleanProperty(true,"LUI");
     @FXML
     SVGPath MemReadPath;
-    private BooleanProperty MemReadWire = new SimpleBooleanProperty();
+    private BooleanProperty MemReadWire = new SimpleBooleanProperty(true,"MemRead");
     @FXML
     SVGPath RegWritePath;
-    private BooleanProperty RegWriteWire = new SimpleBooleanProperty();
+    private BooleanProperty RegWriteWire = new SimpleBooleanProperty(true,"RegWrite");
     @FXML
     SVGPath BranchMuxSelectorPath;
-    private BooleanProperty BranchMuxSelectorWire = new SimpleBooleanProperty();
+    private BooleanProperty BranchMuxSelectorWire = new SimpleBooleanProperty(false,"BranchMuxSelectorWire");
     @FXML
     SVGPath BranchOrInput1Path;
-    private BooleanProperty BranchOrInput1Wire = new SimpleBooleanProperty();
+    private BooleanProperty BranchOrInput1Wire = new SimpleBooleanProperty(false,"BranchOrInput1");
     @FXML
     SVGPath BranchOrInput2Path;
-    private BooleanProperty BranchOrInput2Wire = new SimpleBooleanProperty();
+    private BooleanProperty BranchOrInput2Wire = new SimpleBooleanProperty(false,"BranchOrInput2");
     @FXML
     SVGPath RegWriteAndOutputPath;
-    private BooleanProperty RegWriteAndOutputWire = new SimpleBooleanProperty();
+    private BooleanProperty RegWriteAndOutputWire = new SimpleBooleanProperty(false,"RegWriteAndOutput");
     @FXML
     SVGPath ALUZeroPath;
-    private BooleanProperty ALUZeroWire = new SimpleBooleanProperty();
+    private BooleanProperty ALUZeroWire = new SimpleBooleanProperty(false,"ALUZero");
     @FXML
     SVGPath JRPath;
-    private BooleanProperty JRWire = new SimpleBooleanProperty();
+    private BooleanProperty JRWire = new SimpleBooleanProperty(true,"JR");
 
 
 
@@ -193,114 +204,114 @@ public class Processor {
 
     @FXML
     Label MemDataLabel;
-    private StringProperty MemDataWire = new SimpleStringProperty();
+    private StringProperty MemDataWire = new SimpleStringProperty(true,"MemData");
     @FXML
     Label ALUOpLabel;
-    private StringProperty ALUOpWire = new SimpleStringProperty();
+    private StringProperty ALUOpWire = new SimpleStringProperty(true,"ALUOp");
     @FXML
     Label RegDstLabel;
-    private StringProperty RegDstWire = new SimpleStringProperty();
+    private StringProperty RegDstWire = new SimpleStringProperty(true,"RegDst");
     @FXML
     Label InstructionRsLabel;
-    private StringProperty InstructionRsWire = new SimpleStringProperty();
+    private StringProperty InstructionRsWire = new SimpleStringProperty(false,"Instruction RS");
     @FXML
     Label InstructionRtLabel;
-    private StringProperty InstructionRtWire = new SimpleStringProperty();
+    private StringProperty InstructionRtWire = new SimpleStringProperty(false,"Instruction RT");
     @FXML
     Label InstructionRdLabel;
-    private StringProperty InstructionRdWire = new SimpleStringProperty();
+    private StringProperty InstructionRdWire = new SimpleStringProperty(false,"Instruction RD");
     @FXML
     Label InstructionConstLabel;
-    private StringProperty InstructionConstWire = new SimpleStringProperty();
+    private StringProperty InstructionConstWire = new SimpleStringProperty(false, "Instruction Const");
     @FXML
     Label InstructionShamtLabel;
-    private StringProperty InstructionShamtWire = new SimpleStringProperty();
+    private StringProperty InstructionShamtWire = new SimpleStringProperty(false,"Instruction Shamt");
     @FXML
     Label InstructionOpLabel;
-    private StringProperty InstructionOpWire = new SimpleStringProperty();
+    private StringProperty InstructionOpWire = new SimpleStringProperty(false,"OpCode");
     @FXML
     Label PCInputLabel;
-    private StringProperty PCInputWire = new SimpleStringProperty();
+    private StringProperty PCInputWire = new SimpleStringProperty(false,"PCInput");
     @FXML
     Label PCOutputLabel;
-    private StringProperty PCOutputWire = new SimpleStringProperty();
+    private StringProperty PCOutputWire = new SimpleStringProperty(false,"PCOutput");
     @FXML
     Label PCMuxIn1Label;
-    private StringProperty PCMuxIn1Wire = new SimpleStringProperty();
+    private StringProperty PCMuxIn1Wire = new SimpleStringProperty(false,"PCMuxInput1");
     @FXML
     Label PCMuxIn0Label;
-    private StringProperty PCMuxIn0Wire = new SimpleStringProperty();
+    private StringProperty PCMuxIn0Wire = new SimpleStringProperty(false,"PCMuxInput0");
     @FXML
     Label InstructionShiftLabel;
-    private StringProperty InstructionShiftWire = new SimpleStringProperty();
+    private StringProperty InstructionShiftWire = new SimpleStringProperty(false,"InstructionShiftWire");
     @FXML
     Label JumpAddressLabel;
-    private StringProperty JumpAddressWire = new SimpleStringProperty();
+    private StringProperty JumpAddressWire = new SimpleStringProperty(false,"JumpAddress");
     @FXML
     Label PCAdderOutLabel;
-    private StringProperty PCAdderOutWire = new SimpleStringProperty();
+    private StringProperty PCAdderOutWire = new SimpleStringProperty(false,"PCAdderOutput");
     @FXML
     Label BranchAdderOutLabel;
-    private StringProperty BranchAdderOutWire = new SimpleStringProperty();
+    private StringProperty BranchAdderOutWire = new SimpleStringProperty(false,"BranchAdderOutput");
     @FXML
     Label BranchMux1OutLabel;
-    private StringProperty BranchMux1OutWire = new SimpleStringProperty();
+    private StringProperty BranchMux1OutWire = new SimpleStringProperty(false,"BranchMux1Output");
     @FXML
     Label BranchShifterInLabel;
-    private StringProperty BranchShifterInWire = new SimpleStringProperty();
+    private StringProperty BranchShifterInWire = new SimpleStringProperty(false,"BranchShifterInput");
     @FXML
     Label BranchShifterOutLabel;
-    private StringProperty BranchShifterOutWire = new SimpleStringProperty();
+    private StringProperty BranchShifterOutWire = new SimpleStringProperty(false,"BranchShifterOutput");
     @FXML
     Label ALUControllerOutLabel;
-    private StringProperty ALUControllerOutWire = new SimpleStringProperty();
+    private StringProperty ALUControllerOutWire = new SimpleStringProperty(true,"ALUControllerOutput");
     @FXML
     Label ShamtLabel;
-    private StringProperty ShamtWire = new SimpleStringProperty();
+    private StringProperty ShamtWire = new SimpleStringProperty(false,"Shamt");
     @FXML
     Label ALUResultLabel;
-    private StringProperty ALUResultWire = new SimpleStringProperty();
+    private StringProperty ALUResultWire = new SimpleStringProperty(false,"ALUResult");
     @FXML
     Label ALUIn1Label;
-    private StringProperty ALUIn1Wire = new SimpleStringProperty();
+    private StringProperty ALUIn1Wire = new SimpleStringProperty(false,"ALUInput1");
     @FXML
     Label ALUIn2Label;
-    private StringProperty ALUIn2Wire = new SimpleStringProperty();
+    private StringProperty ALUIn2Wire = new SimpleStringProperty(false,"ALUInput2");
     @FXML
     Label ExtenderOutLabel;
-    private StringProperty ExtenderOutWire = new SimpleStringProperty();
+    private StringProperty ExtenderOutWire = new SimpleStringProperty(false,"ImmediateExtenderOutput");
     @FXML
     Label ExtenderMemOutLabel;
-    private StringProperty ExtenderMemOutWire = new SimpleStringProperty();
+    private StringProperty ExtenderMemOutWire = new SimpleStringProperty(false,"MemExtenderOutput");
     @FXML
     Label ReadDataReg1Label;
-    private StringProperty ReadDataReg1Wire = new SimpleStringProperty();
+    private StringProperty ReadDataReg1Wire = new SimpleStringProperty(false,"Reg1ReadData");
     @FXML
     Label ReadDataReg2Label;
-    private StringProperty ReadDataReg2Wire = new SimpleStringProperty();
+    private StringProperty ReadDataReg2Wire = new SimpleStringProperty(false,"Reg2ReadData");
     @FXML
     Label WriteDataRegLabel;
-    private StringProperty WriteDataRegWire = new SimpleStringProperty();
+    private StringProperty WriteDataRegWire = new SimpleStringProperty(false,"RegWriteData");
     @FXML
     Label WriteRegLabel;
-    private StringProperty WriteRegWire = new SimpleStringProperty();
+    private StringProperty WriteRegWire = new SimpleStringProperty(false,"WriteReg");
     @FXML
     Label WriteDataMemLabel;
-    private StringProperty WriteDataMemWire = new SimpleStringProperty();
+    private StringProperty WriteDataMemWire = new SimpleStringProperty(false,"MemWriteData");
     @FXML
     Label ReadDataMemLabel;
-    private StringProperty ReadDataMemWire = new SimpleStringProperty();
+    private StringProperty ReadDataMemWire = new SimpleStringProperty(false,"MemReadData");
     @FXML
     Label MemMux1OutLabel;
-    private StringProperty MemMux1OutWire = new SimpleStringProperty();
+    private StringProperty MemMux1OutWire = new SimpleStringProperty(false,"MemMux1Output");
     @FXML
     Label InstructionFnLabel;
-    private StringProperty InstructionFnWire = new SimpleStringProperty();
+    private StringProperty InstructionFnWire = new SimpleStringProperty(false,"Instruction Fn");
 
 
 
     //    units
-    private Assembler assembler=new Assembler();
+    public InstructionMemory instructionMemory;
     private Controller controller=new Controller();
     private ALUController aluController=new ALUController();
     private Mux ALUMux=new Mux();
@@ -323,40 +334,51 @@ public class Processor {
 
     //Variables
     private String instruction;
-    private  String PCAddress= MipsUtils.extend32(Integer.toBinaryString(assembler.getInitialLocation()));
+    private  String PCAddress;
     private static int i;
+    private boolean buttonPressed=false;
+    private Thread t;
 
-    public void process() throws FileNotFoundException {
+    public void process()  {
 
-        //initializing the ArrayLists and Maps
-        initialize();
 
-        assembler.assemble();
         //Integer.toBinaryString(Integer.parseInt(PCAddress,2)+4)
         PCInputWire.setValue(PCAddress);
         PCOutputWire.setValue(PCAddress);
 
         //Instruction Processing stages
-        for(i=0;i<assembler.getInstructions().size();i=methodRa23a()) {
+        for(i=0;i<instructionMemory.getInstructions().size();i=methodRa23a()) {
+            setButtonPressed(false);
             fetch();
             decode();
             excute();
             toMemory();
             setPC();
-            writeBack();
+            try {
+                writeBack();
+            }  catch (Exception e) {
+                Alert alert = new Alert(Alert.AlertType.ERROR,ZERO_ERROR, ButtonType.OK);
+                alert.showAndWait();
+                return;
+            }
             System.out.println("INSTRUCTION:  "+i);
             printRegisters(); //for Testing
+            while(true){
+                System.out.println("ybdani");
+                if(buttonPressed)
+                    break;
+            }
         }
     }
 
-    private int methodRa23a() {
+    public int methodRa23a() {
         PCOutputWire.setValue(PCInputWire.getValue());
         return (Integer.parseUnsignedInt(PCOutputWire.getValue(),2)-Integer.parseUnsignedInt(PCAddress,2))/4;
     }
 
-    private void fetch(){
+    public void fetch(){
         System.out.println("address: " + PCOutputWire.getValue());
-        instruction= assembler.getInstructions().get(i).getCode();  //TODO get it from InstructionMem
+        instruction= instructionMemory.getInstructions().get(i).getCode();
         //instructionWires
         InstructionOpWire.setValue(instruction.substring(0,6));
         InstructionRsWire.setValue(instruction.substring(6,11));
@@ -368,7 +390,7 @@ public class Processor {
         InstructionFnWire.setValue(instruction.substring(26,32));
     }
 
-    private void decode(){
+    public void decode()  {
 
 
         //controller
@@ -393,7 +415,9 @@ public class Processor {
         WriteRegWire.setValue(WriteRegMux.getOutput());
 
         //RegMem
-        regMem.read(InstructionRsWire.getValue(),InstructionRtWire.getValue(),WriteRegWire.getValue());
+
+            regMem.read(InstructionRsWire.getValue(),InstructionRtWire.getValue(),WriteRegWire.getValue());
+
         ReadDataReg1Wire.setValue(regMem.getReadData1());
         ReadDataReg2Wire.setValue(regMem.getReadData2());
 
@@ -401,8 +425,7 @@ public class Processor {
         extender.setInput(InstructionConstWire.getValue());
         ExtenderOutWire.setValue(extender.getOutput());
     }
-
-    private void excute(){
+    public void excute(){
         //ALUController
         ALUOpWire.setValue(MipsUtils.fromBooleantoString(controller.getAluOp()));
         aluController.setInputs(controller.getAluOp(),MipsUtils.fromStringtoBoolean(InstructionFnWire.getValue()));
@@ -418,13 +441,12 @@ public class Processor {
         ShamtWire.setValue(ShamtMux.getOutput());
 
         //alu
-        ALUIn1Wire=ReadDataReg1Wire;
+        ALUIn1Wire.setValue(ReadDataReg1Wire.getValue());
         alu.setInputs(ALUControllerOutWire.getValue(),ALUIn1Wire.getValue(),ALUIn2Wire.getValue(),ShamtWire.getValue());
         ALUZeroWire.setValue(alu.getZeroFlag());
         ALUResultWire.setValue(alu.getOutput());
     }
-
-    private void toMemory(){
+    public void toMemory(){
         //DataMemory
         WriteDataMemWire.setValue(ReadDataReg2Wire.getValue());
 
@@ -438,8 +460,7 @@ public class Processor {
         MemExtender.setInput(ReadDataMemWire.getValue(),UnsignedWire.get());
         ExtenderMemOutWire.setValue(MemExtender.getOutput());
     }
-
-    private void setPC(){
+    public void setPC(){
         //PCAdder
         PCAdder.setInputs(PCOutputWire.getValue());
         PCAdderOutWire.setValue(PCAdder.getOutput());
@@ -473,8 +494,7 @@ public class Processor {
         PCMux.set2Inputs(PCMuxIn0Wire.getValue(),PCMuxIn1Wire.getValue(),JRWire.get());
         PCInputWire.setValue(PCMux.getOutput());
     }
-
-    private void writeBack(){
+    public void writeBack() throws Exception {
         //MemMux1
         MemMux1.set2Inputs(ALUResultWire.getValue(),ExtenderMemOutWire.getValue(),MemToRegWire.get());
         MemMux1OutWire.setValue(MemMux1.getOutput());
@@ -491,20 +511,21 @@ public class Processor {
     public void printRegisters(){ //TESTING METHOD
         regMem.printRegisters();
     }
-
-    private void initialize(){
-        setBooleanWires();
-        setStringWires();
-        setStringPaths();
-        setUnitsPaths();
-    }
-
     private void setStringPaths() {
-        StringPaths=new ArrayList<>(Arrays.asList(JAL31Path,ALUInput1Path,ALUOpPath,BranchShifterInputPath,BranchMux1OutputPath,BranchAdderOutputPath,Mux16Path,ALUOutputPath,PCOutputPath,BranchAdderInput2Path,MemExtenderOutputPath,MemReadDataPath,ShamtPath,ALUControlOpPath,RegReadData2Path,MemMux1OutputPath,RegWriteDataPath,Adder4Path,ALUInput2Path,WriteRegPath,MemDataPath,RegDstPath,PCInputPath,PCMuxInput0Path,PCMuxInput1Path,PCAdderOutputPath,PCShifterInputPath,PCShifterOutputPath));
+        stringPaths=new ArrayList<>(Arrays.asList(
+                JAL31Path,ALUInput1Path,ALUOpPath,BranchShifterInputPath,BranchMux1OutputPath,BranchAdderOutputPath,
+                Mux16Path,ALUOutputPath,PCOutputPath,BranchAdderInput2Path,MemExtenderOutputPath,MemReadDataPath,ShamtPath,ALUControlOpPath,
+                RegReadData2Path,MemMux1OutputPath,RegWriteDataPath,Adder4Path,ALUInput2Path,WriteRegPath,MemDataPath,RegDstPath,PCInputPath,
+                PCMuxInput0Path,PCMuxInput1Path,PCAdderOutputPath,PCShifterInputPath,PCShifterOutputPath
+        ));
     }
 
     private void setUnitsPaths() {
-        UnitsPaths=new ArrayList<>(Arrays.asList(BranchMux1Path,BranchOrPath,BranchMux2Path,BNEAndPath,BEQAndPath,PCAdderPath,ShamtMuxPath,RegMemPath,ControllerPath,BranchShifterPath,RegWriteAndPath,PCShifterPath,WriteRegMuxPath,ALUSrcMuxPath,MemMux1Path,MemMux2Path,BranchAdderPath,PCPath,PCMuxPath,MemExtenderPath,NormalExtenderPath,ALUControlPath,ALUPath,InstructionMemPath));
+        unitsPaths=new ArrayList<>(Arrays.asList(
+                BranchMux1Path,BranchOrPath,BranchMux2Path,BNEAndPath,BEQAndPath,PCAdderPath,ShamtMuxPath,RegMemPath,
+                ControllerPath,BranchShifterPath,RegWriteAndPath,PCShifterPath,WriteRegMuxPath,ALUSrcMuxPath,MemMux1Path,MemMux2Path,BranchAdderPath,
+                PCPath,PCMuxPath,MemExtenderPath,NormalExtenderPath,ALUControlPath,ALUPath,InstructionMemPath,DataMemPath
+        ));
     }
 
     private void setBooleanWires(){
@@ -527,48 +548,102 @@ public class Processor {
     }
 
     private void setStringWires() {
-        StringWires.put(MemDataLabel,MemDataWire);
-        StringWires.put(ALUOpLabel,ALUOpWire);
-        StringWires.put(RegDstLabel,RegDstWire);
-        StringWires.put(InstructionRsLabel,InstructionRsWire);
-        StringWires.put(InstructionRtLabel,InstructionRtWire);
-        StringWires.put(InstructionRdLabel,InstructionRdWire);
-        StringWires.put(InstructionShamtLabel,InstructionShamtWire);
-        StringWires.put(InstructionOpLabel,InstructionOpWire);
-        StringWires.put(InstructionConstLabel,InstructionConstWire);
-        StringWires.put(PCInputLabel,PCInputWire);
-        StringWires.put(PCOutputLabel,PCInputWire);
-        StringWires.put(PCMuxIn1Label,PCMuxIn1Wire);
-        StringWires.put(PCMuxIn0Label,PCMuxIn0Wire);
-        StringWires.put(InstructionShiftLabel,InstructionShiftWire);
-        StringWires.put(JumpAddressLabel,JumpAddressWire);
-        StringWires.put(PCAdderOutLabel,PCAdderOutWire);
-        StringWires.put(BranchAdderOutLabel,BranchAdderOutWire);
-        StringWires.put(BranchMux1OutLabel,BranchMux1OutWire);
-        StringWires.put(BranchShifterInLabel,BranchShifterInWire);
-        StringWires.put(BranchShifterOutLabel,BranchShifterOutWire);
-        StringWires.put(ALUControllerOutLabel,ALUControllerOutWire);
-        StringWires.put(ShamtLabel,ShamtWire);
-        StringWires.put(ALUResultLabel,ALUResultWire);
-        StringWires.put(ALUIn1Label,ALUIn1Wire);
-        StringWires.put(ALUIn2Label,ALUIn2Wire);
-        StringWires.put(ExtenderOutLabel,ExtenderOutWire);
-        StringWires.put(ExtenderMemOutLabel,ExtenderMemOutWire);
-        StringWires.put(ReadDataReg1Label,ReadDataReg1Wire);
-        StringWires.put(ReadDataReg2Label,ReadDataReg2Wire);
-        StringWires.put(WriteDataRegLabel,WriteDataRegWire);
-        StringWires.put(WriteRegLabel,WriteRegWire);
-        StringWires.put(WriteDataMemLabel,WriteDataMemWire);
-        StringWires.put(ReadDataMemLabel,ReadDataMemWire);
-        StringWires.put(MemMux1OutLabel,MemMux1OutWire);
-        StringWires.put(InstructionFnLabel,InstructionFnWire);
+        stringWires.put(MemDataLabel,MemDataWire);
+        stringWires.put(ALUOpLabel,ALUOpWire);
+        stringWires.put(RegDstLabel,RegDstWire);
+        stringWires.put(InstructionRsLabel,InstructionRsWire);
+        stringWires.put(InstructionRtLabel,InstructionRtWire);
+        stringWires.put(InstructionRdLabel,InstructionRdWire);
+        stringWires.put(InstructionFnLabel,InstructionFnWire);
+        stringWires.put(InstructionShamtLabel,InstructionShamtWire);
+        stringWires.put(InstructionOpLabel,InstructionOpWire);
+        stringWires.put(InstructionConstLabel,InstructionConstWire);
+        stringWires.put(PCInputLabel,PCInputWire);
+        stringWires.put(PCOutputLabel,PCInputWire);
+        stringWires.put(PCMuxIn1Label,PCMuxIn1Wire);
+        stringWires.put(PCMuxIn0Label,PCMuxIn0Wire);
+        stringWires.put(InstructionShiftLabel,InstructionShiftWire);
+        stringWires.put(JumpAddressLabel,JumpAddressWire);
+        stringWires.put(PCAdderOutLabel,PCAdderOutWire);
+        stringWires.put(BranchAdderOutLabel,BranchAdderOutWire);
+        stringWires.put(BranchMux1OutLabel,BranchMux1OutWire);
+        stringWires.put(BranchShifterInLabel,BranchShifterInWire);
+        stringWires.put(BranchShifterOutLabel,BranchShifterOutWire);
+        stringWires.put(ALUControllerOutLabel,ALUControllerOutWire);
+        stringWires.put(ShamtLabel,ShamtWire);
+        stringWires.put(ALUResultLabel,ALUResultWire);
+        stringWires.put(ALUIn1Label,ALUIn1Wire);
+        stringWires.put(ALUIn2Label,ALUIn2Wire);
+        stringWires.put(ExtenderOutLabel,ExtenderOutWire);
+        stringWires.put(ExtenderMemOutLabel,ExtenderMemOutWire);
+        stringWires.put(ReadDataReg1Label,ReadDataReg1Wire);
+        stringWires.put(ReadDataReg2Label,ReadDataReg2Wire);
+        stringWires.put(WriteDataRegLabel,WriteDataRegWire);
+        stringWires.put(WriteRegLabel,WriteRegWire);
+        stringWires.put(WriteDataMemLabel,WriteDataMemWire);
+        stringWires.put(ReadDataMemLabel,ReadDataMemWire);
+        stringWires.put(MemMux1OutLabel,MemMux1OutWire);
+
 
     }
 
 
     private void addListeners(){
+        booleanWires.forEach((SVGPath svgPath, BooleanProperty booleanProperty)->booleanProperty.addListener((observable, oldValue, newValue) -> {
+                    if (newValue) {
+                        svgPath.setId("onWire");
+                    } else {
+                        svgPath.setId("offWire");
+                    }
+                }));
+        unitsPaths.forEach(svgPath -> svgPath.setId("units"));
+//        stringWires.forEach((label, stringProperty) -> stringProperty.addListener(((observable, oldValue, newValue) -> {
+//            label.setText(String.valueOf(Integer.parseInt(newValue,2)));
+//        })));
+    }
+    private void flushWires(){
+        booleanWires.forEach((SVGPath svgPath, BooleanProperty booleanProperty)->booleanProperty.setValue(true));
+        booleanWires.forEach((SVGPath svgPath, BooleanProperty booleanProperty)->booleanProperty.setValue(false));
+
+//        stringWires.forEach((label, stringProperty) -> {
+//            stringProperty.setValue("11111");
+//        });
+    }
+
+
+
+    public void injectInstructionMemory(InstructionMemory instructionMemory) {
+        this.instructionMemory=instructionMemory;
+        PCAddress =  MipsUtils.extend32(Integer.toBinaryString(instructionMemory.getInitialLocation()));
 
     }
+
+    public Map<SVGPath, BooleanProperty> getBooleanWires() {
+        return booleanWires;
+    }
+
+    public Map<Label, StringProperty> getStringWires() {
+        return stringWires;
+    }
+
+    public ObservableList getRegisters() {
+        return regMem.getRegisters();
+    }
+
+    public void setButtonPressed(boolean buttonPressed) {
+        this.buttonPressed = buttonPressed;
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        setBooleanWires();
+        setStringWires();
+        setStringPaths();
+        setUnitsPaths();
+        addListeners();
+        flushWires();
+    }
+
 
 }
 
