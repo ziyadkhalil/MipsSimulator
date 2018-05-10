@@ -2,6 +2,8 @@ package units;
 
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.StringProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import utils.MipsUtils;
 
 import java.util.HashMap;

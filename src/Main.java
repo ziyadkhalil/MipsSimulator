@@ -24,8 +24,7 @@ import java.io.FileNotFoundException;
 
 public class Main extends Application {
     public static void main (String[] args) throws FileNotFoundException {
-        Processor processor=new Processor();
-        processor.process();
+
         launch(args);
 
 
@@ -39,6 +38,7 @@ public class Main extends Application {
 
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
+        primaryStage.setMaximized(true);
         primaryStage.show();
 
 //        DataMemory dataMemory = new DataMemory();

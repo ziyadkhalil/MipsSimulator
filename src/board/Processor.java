@@ -363,11 +363,7 @@ public class Processor implements Initializable{
             }
             System.out.println("INSTRUCTION:  "+i);
             printRegisters(); //for Testing
-            while(true){
-                System.out.println("ybdani");
-                if(buttonPressed)
-                    break;
-            }
+
         }
     }
 
