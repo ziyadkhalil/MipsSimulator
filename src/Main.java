@@ -41,6 +41,7 @@ public class Main extends Application {
         primaryStage.setMaximized(true);
         primaryStage.show();
 
+
 //        DataMemory dataMemory = new DataMemory();
 //        dataMemory.setAddress("100");
 //        dataMemory.setDataToWrite("00001111000011111111000000001111");

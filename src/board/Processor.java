@@ -335,44 +335,68 @@ public class Processor implements Initializable{
     //Variables
     private String instruction;
     private  String PCAddress;
-    private static int i;
+    private static int i=0;
     private boolean buttonPressed=false;
     private Thread t;
+    private MainController mainController;
 
-    public void process()  {
-
-
-        //Integer.toBinaryString(Integer.parseInt(PCAddress,2)+4)
-        PCInputWire.setValue(PCAddress);
-        PCOutputWire.setValue(PCAddress);
-
-        //Instruction Processing stages
-        for(i=0;i<instructionMemory.getInstructions().size();i=methodRa23a()) {
-            setButtonPressed(false);
-            fetch();
-            decode();
-            excute();
-            toMemory();
-            setPC();
-            try {
-                writeBack();
-            }  catch (Exception e) {
-                Alert alert = new Alert(Alert.AlertType.ERROR,ZERO_ERROR, ButtonType.OK);
-                alert.showAndWait();
-                return;
-            }
-            System.out.println("INSTRUCTION:  "+i);
-            printRegisters(); //for Testing
-
+    public void stepByStep(){
+        if(i==0){
+            PCInputWire.setValue(PCAddress);
+            PCOutputWire.setValue(PCAddress);
         }
-    }
+        if(i>=instructionMemory.getInstructions().size())
+            return;
+        fetch();
+        decode();
+        excute();
+        toMemory();
+        setPC();
+        try {
+            writeBack();
+        }  catch (Exception e) {
+            Alert alert = new Alert(Alert.AlertType.ERROR,ZERO_ERROR, ButtonType.OK);
+            alert.showAndWait();
+            return;
+        }
+        System.out.println("INSTRUCTION:  "+i);
+        printRegisters(); //for Testing
+        mainController.instructionsList.requestFocus();
+        mainController.instructionsList.getSelectionModel().select(i);
+        i=methodRa23a();
 
-    public int methodRa23a() {
+    }
+//    public void process()  {
+//
+//
+//        PCInputWire.setValue(PCAddress);
+//        PCOutputWire.setValue(PCAddress);
+//
+//        //Instruction Processing stages
+//        for(i=0;i<instructionMemory.getInstructions().size();i=methodRa23a()) {
+//            setButtonPressed(false);
+//            fetch();
+//            decode();
+//            excute();
+//            toMemory();
+//            setPC();
+//            try {
+//                writeBack();
+//            }  catch (Exception e) {
+//                Alert alert = new Alert(Alert.AlertType.ERROR,ZERO_ERROR, ButtonType.OK);
+//                alert.showAndWait();
+//                return;
+//            }
+//            System.out.println("INSTRUCTION:  "+i);
+//            printRegisters(); //for Testing
+//
+//        }
+//    }
+    private int methodRa23a() {
         PCOutputWire.setValue(PCInputWire.getValue());
         return (Integer.parseUnsignedInt(PCOutputWire.getValue(),2)-Integer.parseUnsignedInt(PCAddress,2))/4;
     }
-
-    public void fetch(){
+    private void fetch(){
         System.out.println("address: " + PCOutputWire.getValue());
         instruction= instructionMemory.getInstructions().get(i).getCode();
         //instructionWires
@@ -385,8 +409,7 @@ public class Processor implements Initializable{
         InstructionShiftWire.setValue(instruction.substring(6));
         InstructionFnWire.setValue(instruction.substring(26,32));
     }
-
-    public void decode()  {
+    private void decode()  {
 
 
         //controller
@@ -421,7 +444,7 @@ public class Processor implements Initializable{
         extender.setInput(InstructionConstWire.getValue());
         ExtenderOutWire.setValue(extender.getOutput());
     }
-    public void excute(){
+    private void excute(){
         //ALUController
         ALUOpWire.setValue(MipsUtils.fromBooleantoString(controller.getAluOp()));
         aluController.setInputs(controller.getAluOp(),MipsUtils.fromStringtoBoolean(InstructionFnWire.getValue()));
@@ -442,7 +465,7 @@ public class Processor implements Initializable{
         ALUZeroWire.setValue(alu.getZeroFlag());
         ALUResultWire.setValue(alu.getOutput());
     }
-    public void toMemory(){
+    private void toMemory(){
         //DataMemory
         WriteDataMemWire.setValue(ReadDataReg2Wire.getValue());
 
@@ -456,7 +479,7 @@ public class Processor implements Initializable{
         MemExtender.setInput(ReadDataMemWire.getValue(),UnsignedWire.get());
         ExtenderMemOutWire.setValue(MemExtender.getOutput());
     }
-    public void setPC(){
+    private void setPC(){
         //PCAdder
         PCAdder.setInputs(PCOutputWire.getValue());
         PCAdderOutWire.setValue(PCAdder.getOutput());
@@ -490,7 +513,7 @@ public class Processor implements Initializable{
         PCMux.set2Inputs(PCMuxIn0Wire.getValue(),PCMuxIn1Wire.getValue(),JRWire.get());
         PCInputWire.setValue(PCMux.getOutput());
     }
-    public void writeBack() throws Exception {
+    private void writeBack() throws Exception {
         //MemMux1
         MemMux1.set2Inputs(ALUResultWire.getValue(),ExtenderMemOutWire.getValue(),MemToRegWire.get());
         MemMux1OutWire.setValue(MemMux1.getOutput());
@@ -504,7 +527,7 @@ public class Processor implements Initializable{
         RegWriteAndOutputWire.setValue(!JRWire.getValue()&&RegWriteWire.getValue());
         regMem.write(RegWriteAndOutputWire.get(),WriteDataRegWire.getValue());
     }
-    public void printRegisters(){ //TESTING METHOD
+    private void printRegisters(){ //TESTING METHOD
         regMem.printRegisters();
     }
     private void setStringPaths() {
@@ -515,7 +538,6 @@ public class Processor implements Initializable{
                 PCMuxInput0Path,PCMuxInput1Path,PCAdderOutputPath,PCShifterInputPath,PCShifterOutputPath
         ));
     }
-
     private void setUnitsPaths() {
         unitsPaths=new ArrayList<>(Arrays.asList(
                 BranchMux1Path,BranchOrPath,BranchMux2Path,BNEAndPath,BEQAndPath,PCAdderPath,ShamtMuxPath,RegMemPath,
@@ -523,7 +545,6 @@ public class Processor implements Initializable{
                 PCPath,PCMuxPath,MemExtenderPath,NormalExtenderPath,ALUControlPath,ALUPath,InstructionMemPath,DataMemPath
         ));
     }
-
     private void setBooleanWires(){
         booleanWires.put(JumpPath,JumpWire);
         booleanWires.put(BNEPath,BNEWire);
@@ -542,7 +563,6 @@ public class Processor implements Initializable{
         booleanWires.put(ALUZeroPath,ALUZeroWire);
         booleanWires.put(JRPath,JRWire);
     }
-
     private void setStringWires() {
         stringWires.put(MemDataLabel,MemDataWire);
         stringWires.put(ALUOpLabel,ALUOpWire);
@@ -582,8 +602,6 @@ public class Processor implements Initializable{
 
 
     }
-
-
     private void addListeners(){
         booleanWires.forEach((SVGPath svgPath, BooleanProperty booleanProperty)->booleanProperty.addListener((observable, oldValue, newValue) -> {
                     if (newValue) {
@@ -605,31 +623,23 @@ public class Processor implements Initializable{
 //            stringProperty.setValue("11111");
 //        });
     }
-
-
-
     public void injectInstructionMemory(InstructionMemory instructionMemory) {
         this.instructionMemory=instructionMemory;
         PCAddress =  MipsUtils.extend32(Integer.toBinaryString(instructionMemory.getInitialLocation()));
 
     }
-
     public Map<SVGPath, BooleanProperty> getBooleanWires() {
         return booleanWires;
     }
-
     public Map<Label, StringProperty> getStringWires() {
         return stringWires;
     }
-
     public ObservableList getRegisters() {
         return regMem.getRegisters();
     }
-
-    public void setButtonPressed(boolean buttonPressed) {
+    private void setButtonPressed(boolean buttonPressed) {
         this.buttonPressed = buttonPressed;
     }
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         setBooleanWires();
@@ -639,7 +649,11 @@ public class Processor implements Initializable{
         addListeners();
         flushWires();
     }
+    public DataMemory getDataMemory() {
+        return dataMemory;
+    }
 
-
+    public void injectMainController(MainController mainController) {
+        this.mainController=mainController;
+    }
 }
-

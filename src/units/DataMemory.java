@@ -148,7 +148,12 @@ public class DataMemory {
                 System.out.println("Error Line:72"); //TODO: ERROR EXCEPTION
         }
     }
+
     public String getDataRead() {
         return dataRead;
+    }
+
+    public Map<String, String> getMemory() {
+        return memory;
     }
 }

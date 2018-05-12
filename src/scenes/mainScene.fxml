@@ -33,7 +33,7 @@
             <Menu mnemonicParsing="false" text="Open Recent" />
             <SeparatorMenuItem mnemonicParsing="false" />
             <MenuItem mnemonicParsing="false" text="Close" />
-            <MenuItem mnemonicParsing="false" text="Save" />
+            <MenuItem fx:id="saveMenuButton" mnemonicParsing="false" text="Save" />
             <MenuItem mnemonicParsing="false" text="Save As…" />
             <MenuItem mnemonicParsing="false" text="Revert" />
             <SeparatorMenuItem mnemonicParsing="false" />
@@ -65,18 +65,17 @@
     </MenuBar>
       <TabPane tabClosingPolicy="UNAVAILABLE">
         <tabs>
-            <Tab text="Untitled Tab">
+            <Tab text="Code Area">
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <MipsTextArea fx:id="codeArea" layoutX="272.0" layoutY="195.0" prefHeight="1003.2" prefWidth="1920.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                        <Button fx:id="runButton" layoutX="546.0" layoutY="129.0" mnemonicParsing="false" text="Run" />
-                        <Button fx:id="debugButton" layoutX="605.0" layoutY="131.0" mnemonicParsing="false" text="Debug" />
+                        <MipsTextArea fx:id="codeArea" layoutX="272.0" layoutY="32.0" prefHeight="957.0" prefWidth="1928.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-8.0" AnchorPane.topAnchor="32.0" />
+                        <Button fx:id="runButton" layoutX="1811.0" layoutY="13.0" mnemonicParsing="false" text="Run" />
                      </children>
                   </AnchorPane>
               </content>
             </Tab>
-          <Tab text="Untitled Tab 2">
+          <Tab text="Data">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1080.0" prefWidth="1920.0">
                      <children>
@@ -93,6 +92,7 @@
                                 </textFill>
                               </Label>
                                     <ListView fx:id="instructionsList" layoutX="47.0" layoutY="48.0" prefHeight="939.0" prefWidth="355.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="48.0" />
+                                    <Button fx:id="nextStep" layoutX="273.0" layoutY="15.0" mnemonicParsing="false" text="Next" />
                             </children>
                           </AnchorPane>
                           <ScrollPane stylesheets="@../application.css" SplitPane.resizableWithParent="false">
@@ -162,7 +162,7 @@
                                                       <TableView fx:id="dataMemoryTable" prefHeight="948.8" prefWidth="422.4" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                                         <columns>
                                                           <TableColumn fx:id="dataMemoryAddressColumn" prefWidth="76.79992371797562" text="Address" />
-                                                          <TableColumn fx:id="DataMemoryDataColumn" prefWidth="345.60011291503906" text="Data" />
+                                                          <TableColumn fx:id="dataMemoryDataColumn" prefWidth="345.60011291503906" text="Data" />
                                                         </columns>
                                                       </TableView>
                                                    </children>

@@ -13,7 +13,7 @@ public class Assembler {
     private String path = "programs\\input.txt";
     private ArrayList<String> tempInstructions = new ArrayList<>();
     private Map<String , String>  labels = new HashMap<>();
-
+    private File input;
 
 
     public  void assemble() throws FileNotFoundException {
@@ -24,7 +24,6 @@ public class Assembler {
 
 
     private void readInput() throws FileNotFoundException {
-        File input = new File(path);
         Scanner sc = new Scanner(input);
 
         while (sc.hasNextLine()) {
@@ -74,5 +73,13 @@ public class Assembler {
 
     public ArrayList<InstructionLine> getInstructions() {
         return instructions;
+    }
+
+    public File getFile() {
+        return input;
+    }
+
+    public void setInput(File input) {
+        this.input = input;
     }
 }
