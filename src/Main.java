@@ -39,6 +39,10 @@ public class Main extends Application {
 
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
+<<<<<<< HEAD
+=======
+        primaryStage.setMaximized(true);
+>>>>>>> 41e9e7c1ef21a2870401dd6c82cff2d2314ca0fc
         primaryStage.show();
 
 //        DataMemory dataMemory = new DataMemory();

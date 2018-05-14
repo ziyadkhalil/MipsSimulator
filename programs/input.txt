@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 main:addi $t0 , $zero , 13
 jal factorial
 j end
@@ -18,3 +19,11 @@ returnOne:addi      $t0,$zero, 1            # load 1 into register $t0
 sw      $t0, 4($sp)       # store 1 into the parent's return value register
 jr      $ra               # jump to parent call
 end:
+=======
+addi $t0 , $zero , 0
+addi $t1, $zero , 5
+sll $t3, $t0, 2
+add $s1, $s0, $t0
+sb $t3, 0($s1)
+addi $t0, $t0 ,1
+>>>>>>> 41e9e7c1ef21a2870401dd6c82cff2d2314ca0fc
