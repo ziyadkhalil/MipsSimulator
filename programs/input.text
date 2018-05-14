@@ -1,1 +1,6 @@
-lui $s1, 32222
+addi $t0 , $zero , 0
+addi $t1, $zero , 5
+sll $t3, $t0, 2
+add $s1, $s0, $t0
+sb $t3, 0($s1)
+addi $t0, $t0 ,1

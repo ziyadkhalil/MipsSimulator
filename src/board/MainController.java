@@ -54,7 +54,7 @@ public class MainController implements Initializable {
         instructionMemory = new InstructionMemory();
     instructionMemory.setInstructions(assembler.getInstructions());
     instructionMemory.setInitialLocation(assembler.getInitialLocation());
-    CircuitController.injectInstructionMemory(instructionMemory);
+   CircuitController.injectInstructionMemory(instructionMemory);
     controlWires = Wire.initControlWires(CircuitController.getBooleanWires(),CircuitController.getStringWires());
     dataPathsWires = Wire.initDataPathsWires(CircuitController.getBooleanWires(),CircuitController.getStringWires());
     populateRegistersTable();
@@ -77,8 +77,7 @@ public class MainController implements Initializable {
     }
 
     private void populateInstructionsList() {
-        instructionsList.setItems(instructionMemory.getInstructions());
-    }
+        instructionsList.setItems(instructionMemory.getInstructions());}
 
     private void populateWiresTable() {
         controlsWiresTableView.setItems(controlWires);

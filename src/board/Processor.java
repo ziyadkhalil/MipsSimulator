@@ -27,7 +27,7 @@ public class Processor implements Initializable{
     private ArrayList<SVGPath> unitsPaths;
     private Map<SVGPath,BooleanProperty> booleanWires=new HashMap<>();
     private Map<Label,StringProperty> stringWires =new HashMap<>();
-    private ObservableList<Wire> wires = FXCollections.observableArrayList();
+   private ObservableList<Wire> wires = FXCollections.observableArrayList();
 
 
 
@@ -342,7 +342,7 @@ public class Processor implements Initializable{
     public void process()  {
 
 
-        //Integer.toBinaryString(Integer.parseInt(PCAddress,2)+4)
+       // Integer.toBinaryString(Integer.parseInt(PCAddress,2)+4);
         PCInputWire.setValue(PCAddress);
         PCOutputWire.setValue(PCAddress);
 
@@ -609,8 +609,8 @@ public class Processor implements Initializable{
 
 
     public void injectInstructionMemory(InstructionMemory instructionMemory) {
-        this.instructionMemory=instructionMemory;
-        PCAddress =  MipsUtils.extend32(Integer.toBinaryString(instructionMemory.getInitialLocation()));
+        this.instructionMemory = instructionMemory;
+        PCAddress = MipsUtils.extend32(Integer.toBinaryString(instructionMemory.getInitialLocation()));
 
     }
 

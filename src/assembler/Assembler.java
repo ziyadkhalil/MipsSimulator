@@ -1,6 +1,6 @@
 package assembler;
 
-import units.InstructionMemory;
+//import units.InstructionMemory;
 
 import java.io.File;
 import java.io.FileNotFoundException;
