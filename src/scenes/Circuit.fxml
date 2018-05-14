@@ -5,7 +5,11 @@
 <?import javafx.scene.shape.SVGPath?>
 <?import javafx.scene.text.Font?>
 
+<<<<<<< HEAD
+<AnchorPane prefHeight="886.0" prefWidth="1129.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
+=======
 <AnchorPane fx:controller="board.Processor" prefHeight="886.0" prefWidth="1129.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
+>>>>>>> 41e9e7c1ef21a2870401dd6c82cff2d2314ca0fc
    <children>
       <AnchorPane fx:id="Circuit" layoutX="112.0" layoutY="96.0" maxHeight="712.0" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="712.0" prefWidth="934.0" scaleX="1.3" scaleY="1.3">
          <children>

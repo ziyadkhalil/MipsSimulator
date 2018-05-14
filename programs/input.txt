@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 j main
 sum:
 slti $t1 , $a0, 2
@@ -24,3 +25,34 @@ main :
 addi $a0,$zero,5 # n = 5
 jal sum
 addi $a0,$v0,0
+=======
+<<<<<<< HEAD
+main:addi $t0 , $zero , 13
+jal factorial
+j end
+factorial:  beq $t0, $zero, returnOne
+addi    $t0, $t0, -1      # subtract 1 from $t0 if not equal to 0
+addi    $sp, $sp, -12     # move stack pointer up 3 words
+sw      $t0, 0($sp)       # store current working number into the top of the stack segment
+sw      $ra, 8($sp)       # store counter at bottom of stack segment
+jal     factorial         # recursive call
+lw      $ra, 8($sp)       # load this call's $ra again(we just got back from a jump)
+lw      $t1, 4($sp)       # load child's return value into $t1
+lw      $t2, 12($sp)      # load parent's start value into $t2
+mul     $t3, $t1, $t2     # multiply child's return value by parent's working value, store in $t3.
+sw      $t3, 16($sp)      # take result(in $t3), store in parent's return value.
+addi    $sp, $sp, 12      # move stackpointer back down for the parent call
+jr      $ra               # jump to parent call
+returnOne:addi      $t0,$zero, 1            # load 1 into register $t0
+sw      $t0, 4($sp)       # store 1 into the parent's return value register
+jr      $ra               # jump to parent call
+end:
+=======
+addi $t0 , $zero , 0
+addi $t1, $zero , 5
+sll $t3, $t0, 2
+add $s1, $s0, $t0
+sb $t3, 0($s1)
+addi $t0, $t0 ,1
+>>>>>>> 41e9e7c1ef21a2870401dd6c82cff2d2314ca0fc
+>>>>>>> b625e40c53e2364c799ff811ea5f4c02290a40a2

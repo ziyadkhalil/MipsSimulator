@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+=======
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
+>>>>>>> 41e9e7c1ef21a2870401dd6c82cff2d2314ca0fc
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
@@ -70,8 +75,11 @@
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
                         <MipsTextArea fx:id="codeArea" layoutX="272.0" layoutY="195.0" prefHeight="1003.2" prefWidth="1920.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+<<<<<<< HEAD
+=======
                         <Button fx:id="runButton" layoutX="546.0" layoutY="129.0" mnemonicParsing="false" text="Run" />
                         <Button fx:id="debugButton" layoutX="605.0" layoutY="131.0" mnemonicParsing="false" text="Debug" />
+>>>>>>> 41e9e7c1ef21a2870401dd6c82cff2d2314ca0fc
                      </children>
                   </AnchorPane>
               </content>
@@ -84,7 +92,11 @@
                         <items>
                           <AnchorPane prefHeight="987.0" prefWidth="421.0">
                             <children>
+<<<<<<< HEAD
+                              <Label alignment="CENTER" layoutX="14.0" layoutY="14.0" minWidth="60.0" prefWidth="-1.0" style="&#10;" text="Master" textAlignment="CENTER" wrapText="false">
+=======
                               <Label alignment="CENTER" layoutX="14.0" layoutY="14.0" minWidth="60.0" prefWidth="-1.0" style="&#10;" text="Instruction Memory" textAlignment="CENTER" wrapText="false">
+>>>>>>> 41e9e7c1ef21a2870401dd6c82cff2d2314ca0fc
                                 <font>
                                   <Font size="18.0" fx:id="x1" />
                                 </font>
@@ -92,7 +104,15 @@
                                   <Color blue="0.624" green="0.624" red="0.624" fx:id="x2" />
                                 </textFill>
                               </Label>
+<<<<<<< HEAD
+                                    <TableView layoutX="111.0" layoutY="45.0" prefHeight="942.0" prefWidth="422.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="45.0">
+                                      <columns>
+                                        <TableColumn editable="false" prefWidth="420.79998782873156" resizable="false" sortable="false" />
+                                      </columns>
+                                    </TableView>
+=======
                                     <ListView fx:id="instructionsList" layoutX="47.0" layoutY="48.0" prefHeight="939.0" prefWidth="355.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="48.0" />
+>>>>>>> 41e9e7c1ef21a2870401dd6c82cff2d2314ca0fc
                             </children>
                           </AnchorPane>
                           <ScrollPane stylesheets="@../application.css" SplitPane.resizableWithParent="false">
@@ -103,6 +123,8 @@
                           <AnchorPane prefHeight="987.0" prefWidth="456.0">
                             <children>
                               <Label alignment="CENTER" font="$x1" layoutX="14.0" layoutY="14.0" style="&#10;" text="Details" textAlignment="CENTER" textFill="$x2" wrapText="false" />
+<<<<<<< HEAD
+=======
                                     <TabPane layoutX="35.0" layoutY="740.0" prefHeight="987.2" prefWidth="422.4" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                       <tabs>
                                         <Tab text="Registers">
@@ -171,6 +193,7 @@
                                           </Tab>
                                       </tabs>
                                     </TabPane>
+>>>>>>> 41e9e7c1ef21a2870401dd6c82cff2d2314ca0fc
                             </children>
                           </AnchorPane>
                         </items>

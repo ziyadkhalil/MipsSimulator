@@ -2,8 +2,6 @@ package units;
 
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.StringProperty;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import utils.MipsUtils;
 
 import java.util.HashMap;
@@ -148,12 +146,7 @@ public class DataMemory {
                 System.out.println("Error Line:72"); //TODO: ERROR EXCEPTION
         }
     }
-
     public String getDataRead() {
         return dataRead;
-    }
-
-    public Map<String, String> getMemory() {
-        return memory;
     }
 }

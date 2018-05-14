@@ -1,5 +1,20 @@
 package board;
 
+<<<<<<< HEAD
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.layout.AnchorPane;
+
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class MainController implements Initializable {
+@FXML
+    AnchorPane Circuit;
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+=======
 import assembler.Assembler;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -94,6 +109,7 @@ public class MainController implements Initializable {
         this.registerNameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         this.registerValueColumn.setCellValueFactory(new PropertyValueFactory<>("value"));
 
+>>>>>>> 41e9e7c1ef21a2870401dd6c82cff2d2314ca0fc
 
     }
 }
