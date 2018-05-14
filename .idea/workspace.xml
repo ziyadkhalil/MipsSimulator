@@ -7,13 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="02c8cb52-8400-4d70-a6a1-01c38c533281" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/programs/input.text" afterPath="$PROJECT_DIR$/programs/input.text" />
       <change beforePath="$PROJECT_DIR$/programs/input.txt" afterPath="$PROJECT_DIR$/programs/input.txt" />
-      <change beforePath="$PROJECT_DIR$/src/assembler/Assembler.java" afterPath="$PROJECT_DIR$/src/assembler/Assembler.java" />
-      <change beforePath="$PROJECT_DIR$/src/board/MainController.java" afterPath="$PROJECT_DIR$/src/board/MainController.java" />
-      <change beforePath="$PROJECT_DIR$/src/board/Processor.java" afterPath="$PROJECT_DIR$/src/board/Processor.java" />
+      <change beforePath="$PROJECT_DIR$/src/assembler/input.txt" afterPath="$PROJECT_DIR$/src/assembler/input.txt" />
+      <change beforePath="$PROJECT_DIR$/src/units/Register.java" afterPath="$PROJECT_DIR$/src/units/Register.java" />
     </list>
     <ignored path="$PROJECT_DIR$/..//////////////////////////////////MipsSimulatorV0/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -50,42 +47,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Processor.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/board/Processor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5687">
-              <caret line="614" column="5" lean-forward="false" selection-start-line="614" selection-start-column="5" selection-end-line="614" selection-end-column="5" />
-              <folding>
-                <element signature="e#17992#17993#0" expanded="true" />
-                <element signature="e#18048#18049#0" expanded="true" />
-                <element signature="e#23521#23522#0" expanded="true" />
-                <element signature="e#23556#23557#0" expanded="true" />
-                <element signature="e#23614#23615#0" expanded="true" />
-                <element signature="e#23648#23649#0" expanded="true" />
-                <element signature="e#23692#23693#0" expanded="true" />
-                <element signature="e#23736#23737#0" expanded="true" />
-                <element signature="e#23795#23796#0" expanded="true" />
-                <element signature="e#23845#23846#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="InstructionLine.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/assembler/InstructionLine.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="145">
               <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="input.text" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/programs/input.text">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -104,8 +70,18 @@
       <file leaf-file-name="input.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/programs/input.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="input.txt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/assembler/input.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="399">
+              <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -121,32 +97,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Register.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/units/Register.java">
+      <file leaf-file-name="MainController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/board/MainController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="588">
-              <caret line="36" column="23" lean-forward="false" selection-start-line="36" selection-start-column="23" selection-end-line="36" selection-end-column="23" />
+            <state relative-caret-position="168">
+              <caret line="8" column="35" lean-forward="true" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
               <folding>
-                <element signature="e#1397#1398#0" expanded="true" />
-                <element signature="e#1431#1432#0" expanded="true" />
-                <element signature="e#1476#1477#0" expanded="true" />
-                <element signature="e#1504#1505#0" expanded="true" />
-                <element signature="e#1546#1547#0" expanded="true" />
-                <element signature="e#1583#1584#0" expanded="true" />
+                <element signature="method#populateWiresTable#0;class#MainController#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/board/MainController.java">
+      <file leaf-file-name="Register.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/units/Register.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="145">
-              <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#populateWiresTable#0;class#MainController#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="282">
+              <caret line="42" column="5" lean-forward="true" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -225,8 +193,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/units/DataMemory.java" />
-        <option value="$PROJECT_DIR$/src/units/Register.java" />
-        <option value="$PROJECT_DIR$/src/units/DataMemory.java" />
         <option value="$PROJECT_DIR$/src/units/Extender.java" />
         <option value="$PROJECT_DIR$/src/board/Processor.fxml" />
         <option value="$PROJECT_DIR$/src/Main.java" />
@@ -252,7 +218,6 @@
         <option value="$PROJECT_DIR$/src/units/InstructionMemory.java" />
         <option value="$PROJECT_DIR$/src/assembler/InstructionLine.java" />
         <option value="$PROJECT_DIR$/src/board/ProcessorLogic.java" />
-        <option value="$PROJECT_DIR$/src/units/Register.java" />
         <option value="$PROJECT_DIR$/src/assembler/Assembler.java" />
         <option value="$PROJECT_DIR$/src/assembler/Assembler.java" />
         <option value="$PROJECT_DIR$/src/board/Processor.java" />
@@ -264,17 +229,20 @@
         <option value="$PROJECT_DIR$/src/board/MainController.java" />
         <option value="$PROJECT_DIR$/src/board/MainController.java" />
         <option value="$PROJECT_DIR$/src/board/MainController.java" />
-        <option value="$PROJECT_DIR$/programs/input.txt" />
-        <option value="$PROJECT_DIR$/programs/input.txt" />
-        <option value="$PROJECT_DIR$/programs/input.txt" />
-        <option value="$PROJECT_DIR$/programs/input.txt" />
-        <option value="$PROJECT_DIR$/programs/input.txt" />
-        <option value="$PROJECT_DIR$/programs/input.txt" />
-        <option value="$PROJECT_DIR$/programs/input.txt" />
-        <option value="$PROJECT_DIR$/programs/input.txt" />
-        <option value="$PROJECT_DIR$/programs/input.txt" />
         <option value="$PROJECT_DIR$/programs/input.text" />
+        <option value="$PROJECT_DIR$/src/units/Register.java" />
+        <option value="$PROJECT_DIR$/src/units/Register.java" />
         <option value="$PROJECT_DIR$/programs/input.txt" />
+        <option value="$PROJECT_DIR$/programs/input.txt" />
+        <option value="$PROJECT_DIR$/programs/input.txt" />
+        <option value="$PROJECT_DIR$/programs/input.txt" />
+        <option value="$PROJECT_DIR$/programs/input.txt" />
+        <option value="$PROJECT_DIR$/programs/input.txt" />
+        <option value="$PROJECT_DIR$/programs/input.txt" />
+        <option value="$PROJECT_DIR$/programs/input.txt" />
+        <option value="$PROJECT_DIR$/programs/input.txt" />
+        <option value="$PROJECT_DIR$/programs/input.txt" />
+        <option value="$PROJECT_DIR$/src/assembler/input.txt" />
       </list>
     </option>
   </component>
@@ -290,11 +258,10 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
-    <option name="width" value="818" />
-    <option name="height" value="581" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="6" />
+    <option name="width" value="1612" />
+    <option name="height" value="876" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -352,6 +319,12 @@
               <item name="MipsSimulator" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="board" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MipsSimulator" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MipsSimulator" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="META-INF" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MipsSimulator" type="b2602c69:ProjectViewProjectNode" />
@@ -571,7 +544,7 @@
       <workItem from="1525909736177" duration="39505000" />
       <workItem from="1525979116902" duration="289000" />
       <workItem from="1525979418559" duration="2322000" />
-      <workItem from="1526155511735" duration="1040000" />
+      <workItem from="1526155511735" duration="3634000" />
     </task>
     <task id="LOCAL-00001" summary="#0&#10;units package created to include units&#10;board package created to include the circuit">
       <created>1522402405806</created>
@@ -773,11 +746,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="357563000" />
+    <option name="totallyTimeSpent" value="360157000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1048" extended-state="7" />
-    <editor active="true" />
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -785,10 +757,10 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.45414364" sideWeight="0.58697915" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.45414364" sideWeight="0.58802086" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32975295" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25984251" sideWeight="0.43233082" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.45414364" sideWeight="0.41302082" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.45414364" sideWeight="0.41197917" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1160,17 +1132,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/units/Wire.java" />
-    <entry file="file://$PROJECT_DIR$/src/assembler/input.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="17" lean-forward="true" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/units/DataMemory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="273">
           <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding>
+            <element signature="e#591#592#0" expanded="false" />
+            <element signature="e#631#632#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1179,6 +1148,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="343">
           <caret line="77" column="30" lean-forward="true" selection-start-line="77" selection-start-column="30" selection-end-line="77" selection-end-column="30" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1238,32 +1208,9 @@
         <state relative-caret-position="819">
           <caret line="44" column="31" lean-forward="false" selection-start-line="44" selection-start-column="31" selection-end-line="44" selection-end-column="31" />
           <folding>
-            <element signature="e#4043#4044#0" expanded="true" />
-            <element signature="e#4075#4076#0" expanded="true" />
+            <element signature="e#4043#4044#0" expanded="false" />
+            <element signature="e#4075#4076#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/units/Register.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
-          <caret line="36" column="23" lean-forward="false" selection-start-line="36" selection-start-column="23" selection-end-line="36" selection-end-column="23" />
-          <folding>
-            <element signature="e#1397#1398#0" expanded="true" />
-            <element signature="e#1431#1432#0" expanded="true" />
-            <element signature="e#1476#1477#0" expanded="true" />
-            <element signature="e#1504#1505#0" expanded="true" />
-            <element signature="e#1546#1547#0" expanded="true" />
-            <element signature="e#1583#1584#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="49" column="57" lean-forward="false" selection-start-line="49" selection-start-column="57" selection-end-line="49" selection-end-column="57" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1272,25 +1219,6 @@
         <state relative-caret-position="154">
           <caret line="541" column="0" lean-forward="false" selection-start-line="541" selection-start-column="0" selection-end-line="541" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/assembler/InstructionLine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/board/MainController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#populateWiresTable#0;class#MainController#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1304,22 +1232,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/programs/input.text">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/programs/input.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/assembler/instsruction/IInstruction.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -1330,8 +1242,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/board/Processor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5687">
-          <caret line="614" column="5" lean-forward="false" selection-start-line="614" selection-start-column="5" selection-end-line="614" selection-end-column="5" />
+        <state relative-caret-position="-5278">
+          <caret line="354" column="23" lean-forward="false" selection-start-line="354" selection-start-column="23" selection-end-line="354" selection-end-column="23" />
           <folding>
             <element signature="e#17992#17993#0" expanded="true" />
             <element signature="e#18048#18049#0" expanded="true" />
@@ -1344,6 +1256,64 @@
             <element signature="e#23795#23796#0" expanded="true" />
             <element signature="e#23845#23846#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/board/MainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" column="35" lean-forward="true" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
+          <folding>
+            <element signature="method#populateWiresTable#0;class#MainController#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="49" column="57" lean-forward="false" selection-start-line="49" selection-start-column="57" selection-end-line="49" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/units/Register.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="42" column="5" lean-forward="true" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/programs/input.text">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assembler/InstructionLine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/programs/input.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assembler/input.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

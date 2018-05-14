@@ -1,6 +1,26 @@
-addi $t0 , $zero , 0
-addi $t1, $zero , 5
-sll $t3, $t0, 2
-add $s1, $s0, $t0
-sb $t3, 0($s1)
-addi $t0, $t0 ,1
+j main
+sum:
+slti $t1 , $a0, 2
+addi $t5, $zero, 1
+beq $t1, $t5 , exit
+addi $sp, $sp , -4
+sw $ra , 0($sp)
+addi $sp, $sp, -4
+sw $a0 , 0($sp)
+addi $a0 , $a0 , -1
+jal sum
+lw $a0,0($sp)
+addi $sp, $sp, 4
+add $v0, $v0, $a0
+lw $ra ,0($sp)
+addi $sp, $sp ,4
+jr $ra
+exit: addi $v0 ,$zero, 1
+jr $ra
+
+
+
+main :
+addi $a0,$zero,5 # n = 5
+jal sum
+addi $a0,$v0,0

@@ -42,6 +42,8 @@ public class Register {
     public static String getCodeAssembler(String name)
     {
         System.out.println(name + "->" + Integer.toBinaryString(REGISTER_NAME.indexOf(name)));
+        if(name=="$0")
+            return "00000";
         return Integer.toBinaryString(REGISTER_NAME.indexOf(name));
     }
 
