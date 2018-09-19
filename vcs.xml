@@ -14,9 +14,13 @@
           <option name="url" value="https://github.com/AlexMofer/Printer" />
           <option name="userName" value="" />
         </UrlAndUserName>
+        <UrlAndUserName>
+          <option name="url" value="https://github.com/ZiyadKhalil/process-sechduling.git" />
+          <option name="userName" value="" />
+        </UrlAndUserName>
       </list>
     </option>
-    <option name="cloneParentDir" value="C:\Users\Owenr\Downloads\Compressed\Bill_system" />
+    <option name="cloneParentDir" value="E:\SJSU\CS149" />
   </component>
   <component name="Vcs.Log.App.Settings">
     <option name="MIGRATED" value="true" />
