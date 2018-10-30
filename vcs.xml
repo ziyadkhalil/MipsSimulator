@@ -22,9 +22,13 @@
           <option name="url" value="https://github.com/Kazuya-K3/cs149-memory-allocation.git" />
           <option name="userName" value="" />
         </UrlAndUserName>
+        <UrlAndUserName>
+          <option name="url" value="https://github.com/Kazuya-K3/cs149-memory-allocation" />
+          <option name="userName" value="" />
+        </UrlAndUserName>
       </list>
     </option>
-    <option name="cloneParentDir" value="E:\SJSU\CS149" />
+    <option name="cloneParentDir" value="E:\SJSU\CS149\newFolder" />
   </component>
   <component name="Vcs.Log.App.Settings">
     <option name="MIGRATED" value="true" />
