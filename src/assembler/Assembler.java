@@ -1,10 +1,7 @@
 package assembler;
 
-<<<<<<< HEAD
-=======
-//import units.InstructionMemory;
+import units.InstructionMemory;
 
->>>>>>> 41e9e7c1ef21a2870401dd6c82cff2d2314ca0fc
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
@@ -12,27 +9,21 @@ import java.util.*;
 public class Assembler {
     private int initialLocation=2000;
     private int instructionIndex=0;
-
     private ArrayList<InstructionLine> instructions = new ArrayList<>();
     private String path = "programs\\input.txt";
     private ArrayList<String> tempInstructions = new ArrayList<>();
     private Map<String , String>  labels = new HashMap<>();
-<<<<<<< HEAD
-=======
+    private File input;
 
-
->>>>>>> 41e9e7c1ef21a2870401dd6c82cff2d2314ca0fc
 
     public  void assemble() throws FileNotFoundException {
         readInput();
         handleLabels();
         handleLines();
-        for(int i=0;i<instructions.size();i++)
-//           System.out.println((i+1)+": "+Long.toString(Long.parseLong(instructions.get(i).getCode(),2),16));            //HEX
-            System.out.println((i+1)+" "+instructions.get(i).getCode());                                                      //BINARY
     }
+
+
     private void readInput() throws FileNotFoundException {
-        File input = new File(path);
         Scanner sc = new Scanner(input);
 
         while (sc.hasNextLine()) {
@@ -75,11 +66,24 @@ public class Assembler {
         }
     }
 
+
     public int getInitialLocation() {
         return initialLocation;
     }
 
-    public  ArrayList<InstructionLine> getInstructions() {
+    public ArrayList<InstructionLine> getInstructions() {
         return instructions;
+    }
+
+    public File getFile() {
+        return input;
+    }
+
+    public void setInput(File input) {
+        this.input = input;
+    }
+
+    public void setInitialLocation(int initialLocation) {
+        this.initialLocation = initialLocation;
     }
 }

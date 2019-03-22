@@ -25,9 +25,6 @@ public class Register {
             this.value.setValue("00000000000000000000000000000000");
     }
 
-    public void setValue(String value) {
-        this.value.setValue(value);
-    }
 
     public String getName() {
         return name;
@@ -35,9 +32,6 @@ public class Register {
 
     public String getCode() {
         return code;
-    }
-    public String getValue(){
-        return value.getValue();
     }
 
     public StringProperty getValueProperty() {
@@ -48,8 +42,18 @@ public class Register {
     public static String getCodeAssembler(String name)
     {
         System.out.println(name + "->" + Integer.toBinaryString(REGISTER_NAME.indexOf(name)));
-        if(name=="$0")
-            return "00000";
         return Integer.toBinaryString(REGISTER_NAME.indexOf(name));
+    }
+
+    public String getValue() {
+        return value.get();
+    }
+
+    public StringProperty valueProperty() {
+        return value;
+    }
+
+    public void setValue(String value) {
+        this.value.set(value);
     }
 }

@@ -984,10 +984,8 @@ VBox > .split-menu-button.last > .arrow-button {
     -fx-fill: #da7900;
 }
 
-<<<<<<< HEAD
-=======
 #onWire {
-    -fx-stroke: #61ebff;
+    -fx-stroke: #5fff26;
     -fx-stroke-width: 2;
 }
 #offWire {
@@ -995,8 +993,7 @@ VBox > .split-menu-button.last > .arrow-button {
     -fx-stroke-width: 2;
 }
 #units{
-    -fx-fill: #bababa;
-    -fx-stroke: #000000;
+    -fx-fill: #a7c7ea;
+    -fx-stroke: #3c42a3;
     -fx-stroke-width: 1.4;
 }
->>>>>>> 41e9e7c1ef21a2870401dd6c82cff2d2314ca0fc

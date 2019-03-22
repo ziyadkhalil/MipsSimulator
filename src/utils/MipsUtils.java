@@ -72,6 +72,11 @@ public class MipsUtils {
         }
         return s;
     }
+    public static String fromBooleantoString (boolean b){
+        if(b)
+            return "1";
+        return "0";
+    }
 
     public static long stringToLong(String s){
         if(s.charAt(0)=='0')
@@ -96,5 +101,11 @@ public class MipsUtils {
                 while (s.length()<64)
                     s='1'+s;
             return s;
+    }
+    public static String extendHex(String s){
+        s=s.toUpperCase();
+            while(s.length()<8)
+                s='0'+s;
+        return s;
     }
 }

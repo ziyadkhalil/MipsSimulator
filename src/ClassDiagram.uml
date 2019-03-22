@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="0.0" y="81.0">units.DataMemory</node>
+    <node x="286.0" y="324.0">units.Mux</node>
+    <node x="166.0" y="243.0">units.Extender</node>
+    <node x="0.0" y="162.0">units.Controller</node>
+    <node x="330.0" y="243.0">units.ShiftLeft</node>
+    <node x="172.0" y="162.0">board.Processor</node>
+    <node x="0.0" y="243.0">units.RegMem</node>
+    <node x="0.0" y="324.0">units.Adder</node>
+    <node x="0.0" y="405.0">units.ALU</node>
+    <node x="230.0" y="0.0">units.ALUController</node>
+    <node x="193.0" y="81.0">assembler.Assembler</node>
+    <node x="0.0" y="0.0">units.InstructionMemory</node>
+    <node x="147.0" y="324.0">Main</node>
+  </nodes>
+  <notes />
+  <edges />
+  <settings layout="Hierarchic Group" zoom="0.8" x="673.4722222222223" y="176.5" />
+  <SelectedNodes>
+    <node>assembler.Assembler</node>
+  </SelectedNodes>
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

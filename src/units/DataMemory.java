@@ -2,13 +2,16 @@ package units;
 
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.StringProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.collections.ObservableMap;
 import utils.MipsUtils;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class DataMemory {
-    private Map<String,String> memory;
+    private ObservableMap<String,String> memory;
     private boolean memWrite ;
     private boolean memRead ;
     private String memOp ;
@@ -17,7 +20,7 @@ public class DataMemory {
     private String dataRead = "11111111111111111111111111111111";
     private int offset;
     public DataMemory() {
-        memory = new HashMap<>();
+        memory = FXCollections.observableHashMap();
     }
     public void setAddress (String address){
         long tempTemp = Long.parseLong(address,2);
@@ -86,6 +89,8 @@ public class DataMemory {
         String x;
         switch (memOp){
             case "00":
+                if(offset!=0)
+                    return; //TODO WRONG OFFSET
                 memory.put(address, dataToWrite);
                 break;
             case "01":
@@ -146,7 +151,12 @@ public class DataMemory {
                 System.out.println("Error Line:72"); //TODO: ERROR EXCEPTION
         }
     }
+
     public String getDataRead() {
         return dataRead;
+    }
+
+    public ObservableMap<String, String> getMemory() {
+        return memory;
     }
 }
